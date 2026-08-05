@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório SEO – Ultramáquinas | Julho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:#F5F5F5;--surface:#FFFFFF;--surface2:#F0F0F0;--border:#E0E0E0;
+    --accent:#CC0000;--accent2:#B71C1C;--text:#1A1A1A;--muted:#888888;
+    --up:#1B7F3E;--down:#CC0000;--neutral:#E07B00;
+    --c-jan:#BBBCBD;--c-mar:#888888;--c-abr:#555555;--c-mai:#CC0000;--c-jun:#1A1A1A;--c-jul:#1B7F3E;
+    --red-light:rgba(204,0,0,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;}
+  .header{background:var(--accent);border-bottom:3px solid var(--accent2);padding:48px 64px 40px;position:relative;overflow:hidden;}
+  .header::before{content:'';position:absolute;top:0;right:0;width:320px;height:100%;background:rgba(0,0,0,.12);clip-path:polygon(20% 0,100% 0,100% 100%,0% 100%);pointer-events:none;}
+  .header-tag{font-family:'Montserrat',sans-serif;font-size:11px;color:rgba(255,255,255,.7);letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;}
+  .header h1{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:800;line-height:1.1;color:#fff;}
+  .header h1 span{color:rgba(255,255,255,.85);font-weight:400;}
+  .header-meta{display:flex;gap:32px;margin-top:20px;flex-wrap:wrap;}
+  .header-meta-item{font-family:'Montserrat',sans-serif;font-size:11px;color:rgba(255,255,255,.65);}
+  .header-meta-item strong{color:#fff;}
+  .nav{background:var(--surface);border-bottom:2px solid var(--border);padding:0 64px;display:flex;overflow-x:auto;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .nav a{display:block;padding:14px 18px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:var(--muted);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;border-bottom:3px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;}
+  .nav a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  .container{max-width:1100px;margin:0 auto;padding:48px 64px;}
+  @media(max-width:768px){.header,.container{padding:32px 24px;}.nav{padding:0 16px;}.header h1{font-size:26px;}}
+  .section{margin-bottom:64px;}
+  .section-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px;}
+  .section-title{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid var(--border);}
+  .section-title span{color:var(--accent);}
+  .sub-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;margin-top:32px;text-transform:uppercase;letter-spacing:.04em;}
+  .scorecard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:28px;}
+  .scorecard{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:22px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .scorecard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;}
+  .scorecard.up::after{background:var(--up);}
+  .scorecard.down::after{background:var(--down);}
+  .scorecard.neutral::after{background:var(--neutral);}
+  .scorecard-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;font-family:'Montserrat',sans-serif;}
+  .scorecard-value{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;line-height:1;margin-bottom:10px;color:var(--text);}
+  .scorecard-delta{display:inline-flex;align-items:center;gap:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;}
+  .scorecard-delta.up{color:var(--up);background:rgba(27,127,62,.1);}
+  .scorecard-delta.down{color:var(--down);background:var(--red-light);}
+  .scorecard-delta.neutral{color:var(--neutral);background:rgba(224,123,0,.1);}
+  .scorecard-prev{font-size:11px;color:var(--muted);margin-top:8px;font-family:'Montserrat',sans-serif;}
+  .ytd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:32px;}
+  .ytd-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:6px;padding:18px 20px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .ytd-card-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
+  .ytd-card-value{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--text);}
+  .ytd-card-sub{font-family:'Montserrat',sans-serif;font-size:11px;color:var(--muted);margin-top:6px;}
+  .insight-box{background:var(--surface);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 6px 6px 0;margin-bottom:22px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+  .insight-box p{color:#444;line-height:1.75;font-size:13.5px;}
+  .table-wrap{overflow-x:auto;margin-bottom:22px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  thead th{background:#F5F5F5;color:var(--muted);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:11px 14px;text-align:left;border-bottom:2px solid var(--border);white-space:nowrap;}
+  tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+  tbody tr:hover{background:#FFF5F5;}
+  tbody td{padding:10px 14px;color:#444;vertical-align:middle;}
+  tbody td:first-child{color:var(--text);font-weight:500;}
+  .num{font-family:'Montserrat',sans-serif;font-weight:500;}
+  .tag-up{color:var(--up);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;}
+  .tag-down{color:var(--down);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;}
+  .tag-neutral{color:var(--neutral);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;}
+  .tag-opp{background:var(--red-light);color:var(--accent);font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;font-family:'Montserrat',sans-serif;white-space:nowrap;}
+  .tag-risk{background:rgba(0,0,0,.06);color:#555;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;font-family:'Montserrat',sans-serif;white-space:nowrap;}
+  .tag-brand{background:rgba(0,0,0,.05);color:#777;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;font-family:'Montserrat',sans-serif;white-space:nowrap;}
+  .keyword-cell{max-width:260px;}
+  .page-cell{max-width:300px;font-family:'Montserrat',sans-serif;font-size:11px;word-break:break-all;}
+  .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+  @media(max-width:700px){.charts-grid{grid-template-columns:1fr;}}
+  .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .chart-title{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;}
+  .chart-card canvas{max-height:200px;}
+  .chart-wide{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+  .chart-wide canvas{max-height:180px;}
+  .legend{display:flex;gap:20px;margin-bottom:14px;flex-wrap:wrap;}
+  .legend-item{display:flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:500;color:var(--muted);}
+  .legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+  .divider{height:1px;background:var(--border);margin:28px 0;}
+  .footer{background:var(--accent);border-top:3px solid var(--accent2);padding:22px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-left{font-family:'Montserrat',sans-serif;font-size:11px;color:rgba(255,255,255,.75);}
+  .footer-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:5px 12px;border-radius:3px;letter-spacing:.1em;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-tag">// SEO Performance Report · Jan–Jul 2026</div>
+  <h1>Ultramáquinas<br><span>Relatório SEO</span> — Julho 2026</h1>
+  <div class="header-meta">
+    <div class="header-meta-item">Período atual <strong>01–31 Jul 2026</strong></div>
+    <div class="header-meta-item">Comparativo <strong>Jun 2026</strong></div>
+    <div class="header-meta-item">Acumulado <strong>Jan–Jul 2026</strong></div>
+    <div class="header-meta-item">Domínio <strong>ultramaquinas.com.br</strong></div>
+    <div class="header-meta-item">Gerado em <strong>01 Ago 2026</strong></div>
+  </div>
+</div>
+
+<nav class="nav">
+  <a href="#resumo">01 Resumo</a>
+  <a href="#performance">02 Performance</a>
+  <a href="#ytd">03 Acumulado YTD</a>
+  <a href="#keywords">04 Keywords</a>
+  <a href="#paginas">05 Páginas</a>
+  <a href="#receita">06 Receita</a>
+
+</nav>
+
+<div class="container">
+
+<!-- 01 RESUMO -->
+<section class="section" id="resumo">
+  <div class="section-label">01</div>
+  <div class="section-title">Resumo <span>Executivo</span></div>
+  <div class="scorecard-grid">
+    <div class="scorecard up">
+      <div class="scorecard-label">Cliques Orgânicos</div>
+      <div class="scorecard-value">9.339</div>
+      <span class="scorecard-delta up">▲ +1,7% vs Jun</span>
+      <div class="scorecard-prev">Jun: 9.186</div>
+    </div>
+    <div class="scorecard down">
+      <div class="scorecard-label">Impressões Orgânicas</div>
+      <div class="scorecard-value">1.357.607</div>
+      <span class="scorecard-delta down">▼ -16,2% vs Jun</span>
+      <div class="scorecard-prev">Jun: 1.619.624</div>
+    </div>
+    <div class="scorecard up">
+      <div class="scorecard-label">CTR Orgânico</div>
+      <div class="scorecard-value">0,69%</div>
+      <span class="scorecard-delta up">▲ +0,12 pp vs Jun</span>
+      <div class="scorecard-prev">Jun: 0,57%</div>
+    </div>
+    <div class="scorecard down">
+      <div class="scorecard-label">Posição Média</div>
+      <div class="scorecard-value">7,18</div>
+      <span class="scorecard-delta down">▼ +0,48 pos vs Jun</span>
+      <div class="scorecard-prev">Jun: 6,70</div>
+    </div>
+    <div class="scorecard down">
+      <div class="scorecard-label">Receita Orgânica</div>
+      <div class="scorecard-value">R$19.413</div>
+      <span class="scorecard-delta down">▼ -37,9% vs Jun</span>
+      <div class="scorecard-prev">Jun: R$31.253</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <p>Julho registrou crescimento em cliques (+1,7%) e CTR (+0,12 pp), enquanto as impressões caíram -16,2% e a posição média recuou +0,48 pos — o domínio apareceu em menos buscas mas com maior taxa de clique, sinalizando concentração em queries mais qualificadas.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Métrica</th><th>Julho 2026</th><th>Junho 2026</th><th>Jul vs Jun</th></tr></thead>
+      <tbody>
+        <tr><td>Cliques Orgânicos</td><td class="num">9.339</td><td class="num">9.186</td><td class="tag-up">▲ +1,7%</td></tr>
+        <tr><td>Impressões Orgânicas</td><td class="num">1.357.607</td><td class="num">1.619.624</td><td class="tag-down">▼ -16,2%</td></tr>
+        <tr><td>CTR Orgânico</td><td class="num">0,69%</td><td class="num">0,57%</td><td class="tag-up">▲ +0,12 pp</td></tr>
+        <tr><td>Posição Média</td><td class="num">7,18</td><td class="num">6,70</td><td class="tag-down">▼ +0,48 pos</td></tr>
+        <tr><td>Sessões Orgânicas</td><td class="num">10.882</td><td class="num">10.761</td><td class="tag-up">▲ +1,1%</td></tr>
+        <tr><td>Usuários Orgânicos</td><td class="num">8.659</td><td class="num">8.622</td><td class="tag-up">▲ +0,4%</td></tr>
+        <tr><td>Receita Orgânica</td><td class="num">R$19.413</td><td class="num">R$31.253</td><td class="tag-down">▼ -37,9%</td></tr>
+        <tr><td>Pedidos Orgânicos</td><td class="num">71</td><td class="num">83</td><td class="tag-down">▼ -14,5%</td></tr>
+        <tr><td>Ticket Médio</td><td class="num">R$273</td><td class="num">R$377</td><td class="tag-down">▼ -27,4%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 02 PERFORMANCE -->
+<section class="section" id="performance">
+  <div class="section-label">02</div>
+  <div class="section-title">Performance <span>Orgânica</span></div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-jun)"></div>Junho 2026</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-jul)"></div>Julho 2026</div>
+  </div>
+  <div class="chart-wide">
+    <div class="chart-title">Cliques Orgânicos Diários — Jun vs Jul 2026</div>
+    <canvas id="chartClicksDaily"></canvas>
+  </div>
+  <div class="charts-grid">
+    <div class="chart-card">
+      <div class="chart-title">CTR Mensal (%) — Jun vs Jul</div>
+      <canvas id="chartCTR"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Posição Média — Jun vs Jul</div>
+      <canvas id="chartPosition"></canvas>
+    </div>
+  </div>
+  <div class="insight-box">
+    <p>Divergência entre impressões e cliques: as impressões caíram 16,2% enquanto os cliques cresceram 1,7%. O CTR de 0,69% é o maior registrado no ano, reflexo da queda de impressões em queries genéricas de baixa intenção. A posição média de 7,18 recuou 0,48 pos em relação a junho, indicando perda de posições em categorias de volume médio.</p>
+  </div>
+</section>
+
+<!-- 03 ACUMULADO YTD -->
+<section class="section" id="ytd">
+  <div class="section-label">03</div>
+  <div class="section-title">Acumulado <span>Jan–Jul 2026</span></div>
+  <div class="ytd-grid">
+    <div class="ytd-card">
+      <div class="ytd-card-label">Cliques YTD</div>
+      <div class="ytd-card-value">70.567</div>
+      <div class="ytd-card-sub">Média mensal: 10.081</div>
+    </div>
+    <div class="ytd-card">
+      <div class="ytd-card-label">Impressões YTD</div>
+      <div class="ytd-card-value">12.092.640</div>
+      <div class="ytd-card-sub">Média mensal: 1.727.520</div>
+    </div>
+    <div class="ytd-card">
+      <div class="ytd-card-label">Receita Orgânica YTD</div>
+      <div class="ytd-card-value">R$218.487</div>
+      <div class="ytd-card-sub">Média mensal: R$31.212</div>
+    </div>
+    <div class="ytd-card">
+      <div class="ytd-card-label">Pedidos Orgânicos YTD</div>
+      <div class="ytd-card-value">576</div>
+      <div class="ytd-card-sub">Média mensal: 82</div>
+    </div>
+    <div class="ytd-card">
+      <div class="ytd-card-label">Sessões Orgânicas YTD</div>
+      <div class="ytd-card-value">81.545</div>
+      <div class="ytd-card-sub">Média mensal: 11.649</div>
+    </div>
+    <div class="ytd-card">
+      <div class="ytd-card-label">Ticket Médio YTD</div>
+      <div class="ytd-card-value">R$379</div>
+      <div class="ytd-card-sub">Total: 576 pedidos</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-jan)"></div>Jan/Fev</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-mar)"></div>Mar</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-abr)"></div>Abr</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-mai)"></div>Mai</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-jun)"></div>Jun</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--c-jul)"></div>Jul</div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <div class="chart-title">Cliques Mensais — Jan a Jul 2026</div>
+      <canvas id="chartClicksYTD"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Impressões Mensais — Jan a Jul 2026</div>
+      <canvas id="chartImpYTD"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Receita Orgânica Mensal (R$)</div>
+      <canvas id="chartRevYTD"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Pedidos Orgânicos Mensais</div>
+      <canvas id="chartOrdYTD"></canvas>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <p>Em sete meses de 2026, o canal orgânico acumulou 70.567 cliques, 12,1 milhões de impressões e R$218.487 em receita.</p>
+  </div>
+</section>
+
+<!-- 04 KEYWORDS -->
+<section class="section" id="keywords">
+  <div class="section-label">04</div>
+  <div class="section-title">Análise de <span>Palavras-chave</span></div>
+  <p style="color:var(--muted);font-size:12px;margin-bottom:20px;font-family:'Montserrat',sans-serif;">27.850 queries mapeadas · Julho 2026 · Google Search Console</p>
+  <div class="sub-title">Top 20 por Cliques</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Keyword</th><th>Cliques</th><th>Impressões</th><th>CTR</th><th>Posição</th><th>Tipo</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="keyword-cell">ultra maquinas</td><td class="num">130</td><td class="num">1.469</td><td class="num">8,85%</td><td class="num">1,9</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">2</td><td class="keyword-cell">ultramaquinas</td><td class="num">122</td><td class="num">794</td><td class="num">15,37%</td><td class="num">2,1</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">3</td><td class="keyword-cell">ultra máquinas</td><td class="num">28</td><td class="num">184</td><td class="num">15,22%</td><td class="num">1,7</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">4</td><td class="keyword-cell">ultra maquinas campinas</td><td class="num">27</td><td class="num">478</td><td class="num">5,65%</td><td class="num">1,8</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">5</td><td class="keyword-cell">hammer</td><td class="num">23</td><td class="num">5.265</td><td class="num">0,44%</td><td class="num">6,5</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">6</td><td class="keyword-cell">ultramaquinas campinas</td><td class="num">22</td><td class="num">228</td><td class="num">9,65%</td><td class="num">1,6</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">7</td><td class="keyword-cell">ultra maquinas tamainde</td><td class="num">21</td><td class="num">165</td><td class="num">12,73%</td><td class="num">1,5</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">8</td><td class="keyword-cell">motomil</td><td class="num">18</td><td class="num">708</td><td class="num">2,54%</td><td class="num">6,5</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">9</td><td class="keyword-cell">ultra máquinas aricanduva</td><td class="num">16</td><td class="num">207</td><td class="num">7,73%</td><td class="num">2,1</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">10</td><td class="keyword-cell">hammer ferramentas</td><td class="num">14</td><td class="num">196</td><td class="num">7,14%</td><td class="num">5,6</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">11</td><td class="keyword-cell">ultra maquinas comercial de ferramentas ltda</td><td class="num">13</td><td class="num">96</td><td class="num">13,54%</td><td class="num">3,2</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">12</td><td class="keyword-cell">lavadora de alta pressão power pro-2800 psi</td><td class="num">12</td><td class="num">50</td><td class="num">24,00%</td><td class="num">1,6</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">13</td><td class="keyword-cell">digimess</td><td class="num">10</td><td class="num">1.173</td><td class="num">0,85%</td><td class="num">6,1</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">14</td><td class="keyword-cell">solplast</td><td class="num">10</td><td class="num">699</td><td class="num">1,43%</td><td class="num">6,2</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">15</td><td class="keyword-cell">garthen</td><td class="num">9</td><td class="num">629</td><td class="num">1,43%</td><td class="num">7,6</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">16</td><td class="keyword-cell">bucha furadeira bosch super hobby</td><td class="num">8</td><td class="num">49</td><td class="num">16,33%</td><td class="num">1,0</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">17</td><td class="keyword-cell">parafusadeira goodyear 12v</td><td class="num">8</td><td class="num">63</td><td class="num">12,70%</td><td class="num">1,8</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">18</td><td class="keyword-cell">product</td><td class="num">8</td><td class="num">186</td><td class="num">4,30%</td><td class="num">1,1</td><td><span class="tag-opp">Non-brand</span></td></tr>
+        <tr><td class="num">19</td><td class="keyword-cell">ultramaquinas aricanduva</td><td class="num">8</td><td class="num">92</td><td class="num">8,70%</td><td class="num">1,5</td><td><span class="tag-brand">Branded</span></td></tr>
+        <tr><td class="num">20</td><td class="keyword-cell">ca 38942</td><td class="num">7</td><td class="num">253</td><td class="num">2,77%</td><td class="num">3,3</td><td><span class="tag-opp">Non-brand</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 05 PÁGINAS -->
+<section class="section" id="paginas">
+  <div class="section-label">05</div>
+  <div class="section-title">Páginas com Melhor <span>Desempenho</span></div>
+  <p style="color:var(--muted);font-size:12px;margin-bottom:20px;font-family:'Montserrat',sans-serif;">15.628 páginas mapeadas · Julho 2026</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>URL</th><th>Cliques</th><th>Impressões</th><th>CTR</th><th>Posição</th><th>Obs.</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="page-cell">/</td><td class="num">576</td><td class="num">13.824</td><td class="num">4,17%</td><td class="num">5,7</td><td><span class="tag-opp">Homepage</span></td></tr>
+        <tr><td class="num">2</td><td class="page-cell">/pecas-de-reposicao/induzido</td><td class="num">96</td><td class="num">8.260</td><td class="num">1,16%</td><td class="num">7,2</td><td><span class="tag-opp">Peça-chave</span></td></tr>
+        <tr><td class="num">3</td><td class="page-cell">/nossaslojas</td><td class="num">89</td><td class="num">6.510</td><td class="num">1,37%</td><td class="num">2,7</td><td></td></tr>
+        <tr><td class="num">4</td><td class="page-cell">/fabricante/hammer</td><td class="num">62</td><td class="num">7.112</td><td class="num">0,87%</td><td class="num">6,8</td><td><span class="tag-opp">Crescendo</span></td></tr>
+        <tr><td class="num">5</td><td class="page-cell">/bateria-9-6v-parafusadeira-skil-bosch</td><td class="num">44</td><td class="num">623</td><td class="num">7,06%</td><td class="num">6,3</td><td><span class="tag-opp">CTR alto</span></td></tr>
+        <tr><td class="num">6</td><td class="page-cell">/produto/lavadora-alta-pressao-power-pro-2800psi</td><td class="num">40</td><td class="num">510</td><td class="num">7,84%</td><td class="num">4,1</td><td><span class="tag-opp">CTR alto</span></td></tr>
+        <tr><td class="num">7</td><td class="page-cell">/ferramentas-eletricas/lixadeiras-p/madeira</td><td class="num">39</td><td class="num">29.451</td><td class="num">0,13%</td><td class="num">9,4</td><td><span class="tag-risk">CTR baixo</span></td></tr>
+        <tr><td class="num">8</td><td class="page-cell">/esmerilhadeira-angular-4-1-2-gws-7-115-bosch</td><td class="num">36</td><td class="num">2.394</td><td class="num">1,50%</td><td class="num">6,0</td><td></td></tr>
+        <tr><td class="num">9</td><td class="page-cell">/pecas-de-reposicao/estator-e-bobina</td><td class="num">34</td><td class="num">2.556</td><td class="num">1,33%</td><td class="num">7,6</td><td></td></tr>
+        <tr><td class="num">10</td><td class="page-cell">/pecas-de-reposicao/pecas</td><td class="num">33</td><td class="num">1.953</td><td class="num">1,69%</td><td class="num">8,5</td><td></td></tr>
+        <tr><td class="num">11</td><td class="page-cell">/nivel-aluminio-2m-3-bolhas-magnetico</td><td class="num">32</td><td class="num">3.304</td><td class="num">0,97%</td><td class="num">3,9</td><td></td></tr>
+        <tr><td class="num">12</td><td class="page-cell">/produto/serra-rapida-14-2000w-gco-2000-bosch</td><td class="num">32</td><td class="num">991</td><td class="num">3,23%</td><td class="num">4,8</td><td></td></tr>
+        <tr><td class="num">13</td><td class="page-cell">/furadeira-parafusadeira-12v-com-maleta</td><td class="num">30</td><td class="num">632</td><td class="num">4,75%</td><td class="num">2,5</td><td></td></tr>
+        <tr><td class="num">14</td><td class="page-cell">/martelo-demolidor-30kg-gsh-27-bosch</td><td class="num">29</td><td class="num">5.805</td><td class="num">0,50%</td><td class="num">4,8</td><td><span class="tag-risk">CTR baixo</span></td></tr>
+        <tr><td class="num">15</td><td class="page-cell">/fale-conosco</td><td class="num">28</td><td class="num">4.781</td><td class="num">0,59%</td><td class="num">2,1</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 06 RECEITA -->
+<section class="section" id="receita">
+  <div class="section-label">06</div>
+  <div class="section-title">Faturamento <span>Orgânico</span></div>
+  <div class="scorecard-grid">
+    <div class="scorecard down">
+      <div class="scorecard-label">Receita Orgânica</div>
+      <div class="scorecard-value">R$19.413</div>
+      <span class="scorecard-delta down">▼ -37,9% vs Jun</span>
+      <div class="scorecard-prev">Jun: R$31.253</div>
+    </div>
+    <div class="scorecard down">
+      <div class="scorecard-label">Pedidos Orgânicos</div>
+      <div class="scorecard-value">71</div>
+      <span class="scorecard-delta down">▼ -14,5% vs Jun</span>
+      <div class="scorecard-prev">Jun: 83</div>
+    </div>
+    <div class="scorecard down">
+      <div class="scorecard-label">Ticket Médio</div>
+      <div class="scorecard-value">R$273</div>
+      <span class="scorecard-delta down">▼ -27,4% vs Jun</span>
+      <div class="scorecard-prev">Jun: R$377</div>
+    </div>
+    <div class="scorecard down">
+      <div class="scorecard-label">Add-to-Carts</div>
+      <div class="scorecard-value">420</div>
+      <span class="scorecard-delta down">▼ -3,7% vs Jun</span>
+      <div class="scorecard-prev">Jun: 436</div>
+    </div>
+  </div>
+  <div class="chart-wide">
+    <div class="chart-title">Receita Orgânica Diária — Jun vs Jul 2026</div>
+    <canvas id="chartRevDaily"></canvas>
+  </div>
+</section>
+
+
+
+</div>
+
+<div class="footer">
+  <div class="footer-left">
+    Relatório gerado em 01 Ago 2026 · Ultramáquinas · Dados: GA4 + Google Search Console<br>
+    V4 Company – Carvalho &amp; Co. · Coordenação de Planejamento, Estratégia e Gestão
+  </div>
+  <div class="footer-badge">SEO REPORT v5.0</div>
+</div>
+
+<script>
+Chart.defaults.color='#888';Chart.defaults.font.family="'Montserrat',sans-serif";Chart.defaults.font.size=10;
+const grid='rgba(0,0,0,0.06)';
+const baseOpts={responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},ticks:{color:'#aaa',maxTicksLimit:8}},y:{grid:{color:grid},ticks:{color:'#aaa',maxTicksLimit:5}}}};
+const C_JAN='rgba(180,180,180,0.85)',C_MAR='rgba(130,130,130,0.85)',C_ABR='rgba(80,80,80,0.85)',C_MAI='rgba(204,0,0,0.70)',C_JUN='rgba(26,26,26,0.85)',C_JUL='rgba(27,127,62,0.85)';
+const C_JUN_L='rgba(26,26,26,0.08)',C_JUL_L='rgba(27,127,62,0.12)';
+
+const cliqJun=[366,397,372,179,306,177,156,404,429,407,408,374,132,127,404,423,378,374,315,145,128,396,410,334,322,363,171,151,272,366];
+const cliqJul=[425,344,351,177,113,370,371,395,281,354,161,156,373,394,314,345,330,136,114,351,364,349,364,327,146,138,396,380,334,401,285];
+const dias31=Array.from({length:31},(_,i)=>i+1);
+const pad=(arr,n)=>[...arr,...Array(Math.max(0,n-arr.length)).fill(null)];
+
+new Chart(document.getElementById('chartClicksDaily'),{type:'line',data:{labels:dias31,datasets:[
+  {label:'Jun',data:pad(cliqJun,31),borderColor:C_JUN,backgroundColor:C_JUN_L,tension:.3,pointRadius:0,borderWidth:2,fill:false},
+  {label:'Jul',data:pad(cliqJul,31),borderColor:C_JUL,backgroundColor:C_JUL_L,tension:.3,pointRadius:0,borderWidth:2,fill:false}
+]},options:{...baseOpts,plugins:{legend:{display:true,labels:{color:'#555',boxWidth:10,font:{size:10,family:'Montserrat'}}}}}});
+
+new Chart(document.getElementById('chartCTR'),{type:'bar',data:{labels:['Jun 2026','Jul 2026'],datasets:[{data:[0.57,0.69],backgroundColor:[C_JUN,C_JUL],borderRadius:3,borderSkipped:false}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw.toFixed(2)}%`}}},scales:{...baseOpts.scales,y:{...baseOpts.scales.y,min:0.45,max:0.80,ticks:{callback:v=>v.toFixed(2)+'%',color:'#555',maxTicksLimit:5}}}}});
+
+new Chart(document.getElementById('chartPosition'),{type:'bar',data:{labels:['Jun 2026','Jul 2026'],datasets:[{data:[6.70,7.18],backgroundColor:[C_JUN,C_JUL],borderRadius:3,borderSkipped:false}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw.toFixed(2)}`}}},scales:{...baseOpts.scales,y:{...baseOpts.scales.y,min:6.0,max:7.8,ticks:{callback:v=>v.toFixed(2),color:'#555',maxTicksLimit:5}}}}});
+
+const mesesYTD=['Jan/Fev*','Mar','Abr','Mai','Jun','Jul'];
+const colsYTD=[C_JAN,C_MAR,C_ABR,C_MAI,C_JUN,C_JUL];
+
+new Chart(document.getElementById('chartClicksYTD'),{type:'bar',data:{labels:mesesYTD,datasets:[{data:[10957,11228,9719,9181,9186,9339],backgroundColor:colsYTD,borderRadius:3,borderSkipped:false}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw.toLocaleString('pt-BR')} cliques`}}}}});
+new Chart(document.getElementById('chartImpYTD'),{type:'bar',data:{labels:mesesYTD,datasets:[{data:[1941101,1960672,1624785,1647751,1619624,1357607],backgroundColor:colsYTD,borderRadius:3,borderSkipped:false}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw.toLocaleString('pt-BR')}`}}}}});
+new Chart(document.getElementById('chartRevYTD'),{type:'bar',data:{labels:mesesYTD,datasets:[{data:[35753,38074,35314,22926,31253,19413],backgroundColor:colsYTD,borderRadius:3,borderSkipped:false}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` R$ ${c.raw.toLocaleString('pt-BR')}`}}}}});
+new Chart(document.getElementById('chartOrdYTD'),{type:'bar',data:{labels:mesesYTD,datasets:[{data:[100,68,99,55,83,71],backgroundColor:colsYTD,borderRadius:3,borderSkipped:false}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} pedidos`}}}}});
+
+const revJun=[2687.35,1011.42,1257.96,648.04,628.37,0,1391.76,338.07,1102,0,1675.54,1159.28,0,0,79.04,1057.95,4745.31,2498.73,689.31,0,0,319.93,2280.69,1020.06,231.7,20.19,0,2301.98,0,4107.87];
+const revJul=[1394.75,360.51,459.42,0,0,0,669.46,2697.11,0,2181.9,0,0,317.9,848.97,32.25,268.01,889.72,114.61,165.19,110.66,503.57,638.41,1116.87,1376.68,0,66.07,1733.04,0,0,1034.53,2433.77];
+
+new Chart(document.getElementById('chartRevDaily'),{type:'line',data:{labels:dias31,datasets:[
+  {label:'Jun',data:pad(revJun,31),borderColor:C_JUN,backgroundColor:C_JUN_L,tension:.3,pointRadius:0,borderWidth:2,fill:true},
+  {label:'Jul',data:pad(revJul,31),borderColor:C_JUL,backgroundColor:C_JUL_L,tension:.3,pointRadius:0,borderWidth:2,fill:true}
+]},options:{...baseOpts,plugins:{legend:{display:true,labels:{color:'#555',boxWidth:10,font:{size:10,family:'Montserrat'}}},tooltip:{callbacks:{label:c=>` R$ ${(c.raw||0).toLocaleString('pt-BR')}`}}}}});
+</script>
+</body>
+</html>
