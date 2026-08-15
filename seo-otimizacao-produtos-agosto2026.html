@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO — Ultra Máquinas</title>
+<style>
+  :root {
+    --bg: #F1F1F4;
+    --surface: #FFFFFF;
+    --surface2: #F7F7FA;
+    --border: #E0E0E6;
+    --border2: #EBEBF0;
+    --text: #1C1C1E;
+    --text-muted: #76767E;
+    --text-meta: #4A4A52;
+    --accent: #CC0000;
+    --accent-dim: rgba(204,0,0,.08);
+    --green: #1B7F3E;
+    --green-bg: rgba(27,127,62,.09);
+    --amber: #C66A00;
+    --amber-bg: rgba(198,106,0,.09);
+    --mono: ui-monospace,"SF Mono",Consolas,"Liberation Mono",monospace;
+    --sans: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --radius: 6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111113;
+      --surface: #1C1C1E;
+      --surface2: #222226;
+      --border: #2C2C32;
+      --border2: #26262C;
+      --text: #EFEFEF;
+      --text-muted: #8A8A94;
+      --text-meta: #B0B0BA;
+      --accent: #FF3333;
+      --accent-dim: rgba(255,51,51,.08);
+      --green: #34C86A;
+      --green-bg: rgba(52,200,106,.1);
+      --amber: #F09534;
+      --amber-bg: rgba(240,149,52,.1);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111113;
+    --surface: #1C1C1E;
+    --surface2: #222226;
+    --border: #2C2C32;
+    --border2: #26262C;
+    --text: #EFEFEF;
+    --text-muted: #8A8A94;
+    --text-meta: #B0B0BA;
+    --accent: #FF3333;
+    --accent-dim: rgba(255,51,51,.08);
+    --green: #34C86A;
+    --green-bg: rgba(52,200,106,.1);
+    --amber: #F09534;
+    --amber-bg: rgba(240,149,52,.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: var(--accent);
+    padding: 28px 48px 26px;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .page-header__brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.65);
+  }
+  .page-header__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.01em;
+  }
+  .page-header__meta {
+    margin-left: auto;
+    font-size: 11px;
+    color: rgba(255,255,255,.55);
+    letter-spacing: .04em;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .page-header__meta span { color: rgba(255,255,255,.85); font-weight: 600; }
+
+  /* ── LEGEND BAR ── */
+  .legend {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 48px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .legend-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+  .badge--ok   { background: var(--green-bg);  color: var(--green); }
+  .badge--skip { background: var(--amber-bg);  color: var(--amber); }
+  .badge--ok::before   { content: '●'; font-size: 8px; }
+  .badge--skip::before { content: '◌'; font-size: 8px; }
+
+  /* ── MAIN ── */
+  .main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+
+  /* ── PRODUCT CARD ── */
+  .product {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .product__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border2);
+    background: var(--surface2);
+    flex-wrap: wrap;
+  }
+  .product__code {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: .04em;
+    background: var(--border2);
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .product__name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+    min-width: 0;
+  }
+  .product__url {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+  }
+  .product__url a { color: var(--text-muted); text-decoration: none; }
+  .product__url a:hover { color: var(--accent); }
+
+  /* SKIP state */
+  .product--skip .product__head { opacity: .7; }
+  .skip-message {
+    padding: 28px 24px;
+    color: var(--amber);
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .skip-message::before { content: '—'; font-weight: 700; }
+
+  /* ── FIELDS ── */
+  .fields { padding: 0; }
+
+  .field {
+    display: grid;
+    grid-template-columns: 156px 1fr;
+    border-bottom: 1px solid var(--border2);
+    align-items: stretch;
+  }
+  .field:last-child { border-bottom: none; }
+
+  .field__label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 18px;
+    border-right: 1px solid var(--border2);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+  .field__count {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--text-muted);
+  }
+  .field__count.ok  { color: var(--green); }
+  .field__count.warn { color: var(--amber); }
+
+  .field__value {
+    padding: 14px 18px;
+    color: var(--text);
+    font-size: 13.5px;
+    line-height: 1.55;
+    word-break: break-word;
+  }
+
+  .field__value.seo-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    color: var(--text);
+  }
+
+  .field__value.meta-desc {
+    color: var(--text-meta);
+    font-size: 13px;
+  }
+
+  /* ── DESCRIPTION ── */
+  .desc { padding: 20px 22px 22px; }
+
+  .desc h2 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--text);
+    margin-bottom: 12px;
+    text-wrap: balance;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+
+  .desc h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+
+  .desc h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+
+  .desc p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-meta);
+    margin-bottom: 12px;
+    max-width: 68ch;
+  }
+
+  .desc ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0 14px;
+  }
+  .desc ul li {
+    font-size: 13px;
+    color: var(--text-meta);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .desc ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ── WORD COUNT ROW ── */
+  .desc-footer {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border2);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .wc-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .wc-value {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .section-sep {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 28px 0 10px;
+    opacity: .7;
+  }
+
+  @media (max-width: 640px) {
+    .page-header { padding: 20px 20px 18px; }
+    .main { padding: 20px 12px 48px; }
+    .field { grid-template-columns: 1fr; }
+    .field__label { border-right: none; border-bottom: 1px solid var(--border2); padding: 10px 14px 8px; }
+    .field__value { padding: 10px 14px; }
+    .legend { padding: 10px 20px; flex-wrap: wrap; }
+    .product__url { max-width: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div>
+    <div class="page-header__brand">Ultra Máquinas &mdash; SEO</div>
+    <div class="page-header__title">Otimização de Páginas de Produto</div>
+  </div>
+  <div class="page-header__meta">
+    <div>Competência <span>Agosto 2026</span></div>
+    <div>Produtos <span>8</span></div>
+    <div>Otimizados <span>6</span></div>
+    <div>Sem dados <span>2</span></div>
+  </div>
+</header>
+
+<div class="legend">
+  <span class="legend-label">Legenda</span>
+  <span class="badge badge--ok">Otimizado</span>
+  <span class="badge badge--skip">Sem dados GSC</span>
+</div>
+
+<main class="main">
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 1 — Mochila Duffle Bag 120L Preta -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product">
+    <div class="product__head">
+      <span class="product__code">233901</span>
+      <span class="product__name">Mochila Duffle Bag 120L Impermeável Preta &mdash; Nautika</span>
+      <span class="badge badge--ok">Otimizado</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/mochila-duffle-bag-120l-impermeavel-preta-nautika-206120-81942" target="_blank">/produto/mochila-duffle-bag-120l-impermeavel-preta-nautika-206120-81942</a></div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="field__label">
+          SEO Title
+          <span class="field__count ok">49 caracteres</span>
+        </div>
+        <div class="field__value seo-title">Mochila Duffle Bag 120L Impermeável Preta Nautika</div>
+      </div>
+      <div class="field">
+        <div class="field__label">
+          Meta Description
+          <span class="field__count ok">158 caracteres</span>
+        </div>
+        <div class="field__value meta-desc">A mochila duffle bag 120L Nautika oferece capacidade expansível de 80 a 120L com material PVC 500D Tarpaulin impermeável. Projetada para outdoor, viagens e esportes.</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Descrição</div>
+        <div class="field__value">
+          <div class="desc">
+            <h2>Mochila Duffle Bag 120L para Viagens e Aventuras Outdoor</h2>
+            <p>A mochila duffle bag 120L da Nautika é a escolha ideal para quem precisa de grande capacidade aliada à proteção contra umidade. Com volume expansível de 80 a 120 litros, adapta-se a viagens curtas ou longas, aventuras outdoor e transporte de equipamentos.</p>
+            <h3>Capacidade e Material</h3>
+            <p>Fabricada em PVC 500D Tarpaulin, garante resistência e impermeabilidade em ambientes úmidos e durante chuvas. Com medidas de 70 x 40 x 40 cm e peso de 1,85 kg, combina robustez com praticidade no transporte.</p>
+            <ul>
+              <li>Capacidade expansível: 80L a 120L</li>
+              <li>Material: PVC 500D Tarpaulin impermeável</li>
+              <li>Dimensões: 70 x 40 x 40 cm | Peso: 1,85 kg</li>
+              <li>Versatilidade: uso como mochila ou bolsa</li>
+              <li>Proteção reforçada contra umidade e intempéries</li>
+            </ul>
+            <h3>Aplicações</h3>
+            <p>Indicada para camping, trilhas, esportes e transporte de equipamentos de grande porte. A bolsa duffle bag 120L NTK mantém os pertences organizados e protegidos em qualquer situação.</p>
+            <div class="desc-footer">
+              <span class="wc-label">Contagem</span>
+              <span class="wc-value">~148 palavras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 2 — Mochila Duffle Bag 120L Laranja (SEM DADOS) -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product product--skip">
+    <div class="product__head">
+      <span class="product__code">233900</span>
+      <span class="product__name">Mochila Duffle Bag 120L Impermeável Laranja &mdash; Nautika</span>
+      <span class="badge badge--skip">Sem dados GSC</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/mochila-duffle-bag-120l-impermeavel-laranja-nautika-206120-81941" target="_blank">/produto/mochila-duffle-bag-120l-impermeavel-laranja-nautika-206120-81941</a></div>
+    </div>
+    <div class="skip-message">Sem dados suficientes no Google Search Console para otimização desta URL.</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 3 — Cartucho de Gás NTK Tekgas -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product">
+    <div class="product__head">
+      <span class="product__code">209815</span>
+      <span class="product__name">Cartucho de Gás NTK Tekgas 280600 &mdash; Nautika</span>
+      <span class="badge badge--ok">Otimizado</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/cartucho-de-gas-ntk-tekgas-para-fogareiros-280600-nautika-76493" target="_blank">/produto/cartucho-de-gas-ntk-tekgas-para-fogareiros-280600-nautika-76493</a></div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="field__label">
+          SEO Title
+          <span class="field__count ok">51 caracteres</span>
+        </div>
+        <div class="field__value seo-title">Cartucho de Gás NTK Tekgas para Fogareiros Nautika</div>
+      </div>
+      <div class="field">
+        <div class="field__label">
+          Meta Description
+          <span class="field__count ok">157 caracteres</span>
+        </div>
+        <div class="field__value meta-desc">Cartucho de gás NTK Tekgas com válvula de segurança e mistura ISO de iso-butano/propano. Para fogareiros Nautika Apolo e Cairo. Ideal para camping e trilhas.</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Descrição</div>
+        <div class="field__value">
+          <div class="desc">
+            <h2>Cartucho de Gás NTK Tekgas para Fogareiros Compactos</h2>
+            <p>O cartucho de gás NTK Tekgas é projetado para fogareiros compactos da linha Nautika, como os modelos Apolo, Cairo e similares. Sua mistura especial de iso-butano/propano (ISO) garante máximo rendimento calórico em diferentes altitudes.</p>
+            <h3>Segurança e Compatibilidade</h3>
+            <p>Conta com válvula de segurança que permite o engate e desengate sem vazamentos, garantindo praticidade e segurança no campo. Fácil de transportar, é a melhor opção para camping, trilhas e aventuras ao ar livre.</p>
+            <ul>
+              <li>Mistura ISO: iso-butano/propano</li>
+              <li>Válvula de segurança para engate/desengate sem vazamentos</li>
+              <li>Compatível com fogareiros Nautika Apolo, Cairo e similares</li>
+              <li>Peso por unidade: 230g</li>
+              <li>Validade indeterminada</li>
+            </ul>
+            <h3>Produto Inflamável — Cuidados</h3>
+            <p>Mantenha afastado de raios solares, não exponha a temperaturas superiores a 50°C, armazene em local fresco e ventilado e mantenha fora do alcance de crianças.</p>
+            <div class="desc-footer">
+              <span class="wc-label">Contagem</span>
+              <span class="wc-value">~152 palavras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 4 — Motobomba Centrífuga Incêndio 3CV (SEM DADOS) -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product product--skip">
+    <div class="product__head">
+      <span class="product__code">211471</span>
+      <span class="product__name">Motobomba Centrífuga Incêndio 3,0CV 110/220V &mdash; Eletroplas</span>
+      <span class="badge badge--skip">Sem dados GSC</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/motobomba-centrifuga-incendio-3-0cv-110-220v-4160-3-eletroplas-77078" target="_blank">/produto/motobomba-centrifuga-incendio-3-0cv-110-220v-4160-3-eletroplas-77078</a></div>
+    </div>
+    <div class="skip-message">Sem dados suficientes no Google Search Console para otimização desta URL.</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 5 — Motobomba Periférica 1CV ICS-100AB -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product">
+    <div class="product__head">
+      <span class="product__code">208644</span>
+      <span class="product__name">Motobomba Periférica 1CV ICS-100AB Bivolt &mdash; Eletroplas</span>
+      <span class="badge badge--ok">Otimizado</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/motobomba-periferica-1cv-ics-100ab-bivolt-29890-1-eletroplas-76642" target="_blank">/produto/motobomba-periferica-1cv-ics-100ab-bivolt-29890-1-eletroplas-76642</a></div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="field__label">
+          SEO Title
+          <span class="field__count ok">52 caracteres</span>
+        </div>
+        <div class="field__value seo-title">Motobomba Periférica 1CV Bivolt Eletroplas ICS-100AB</div>
+      </div>
+      <div class="field">
+        <div class="field__label">
+          Meta Description
+          <span class="field__count ok">151 caracteres</span>
+        </div>
+        <div class="field__value meta-desc">Motobomba periférica 1cv Eletroplas ICS-100AB bivolt com rotor em latão, anti-travamento em inox e pressão máxima de 52 mca. Ideal para residências e chácaras.</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Descrição</div>
+        <div class="field__value">
+          <div class="desc">
+            <h2>Motobomba Periférica 1CV Eletroplas ICS-100AB Bivolt</h2>
+            <p>A motobomba periférica 1cv Eletroplas ICS-100AB é projetada para aplicações residenciais, chácaras, pequenos prédios e cidades litorâneas que necessitem de bombeamento de água isenta de sólidos. Opera em tensão bivolt (127/220V), monofásico, a 60Hz.</p>
+            <h3>Construção e Desempenho</h3>
+            <p>O rotor periférico em latão assegura eficiência e durabilidade. O sistema anti-travamento em inox e o protetor térmico do motor garantem maior vida útil e segurança operacional.</p>
+            <ul>
+              <li>Modelo: ICS-100AB | Potência: 1,0 CV</li>
+              <li>Tensão: Bivolt 127/220V | Monofásico | 60Hz</li>
+              <li>Sucção: 1 pol | Recalque: 1 pol</li>
+              <li>Diâmetro do Rotor: 70 mm</li>
+              <li>Pressão Máxima: 52 mca</li>
+              <li>Altura Máxima de Sucção: 7 mca</li>
+              <li>Dimensões: 170 x 140 x 300 mm | Peso: 8,3 kgf</li>
+            </ul>
+            <h3>Garantia</h3>
+            <p>Garantia de 6 meses fornecida pelo fabricante.</p>
+            <div class="desc-footer">
+              <span class="wc-label">Contagem</span>
+              <span class="wc-value">~128 palavras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 6 — Caixa Térmica Igloo Branca 113L -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product">
+    <div class="product__head">
+      <span class="product__code">231148</span>
+      <span class="product__name">Caixa Térmica Igloo Marine Contour 113L Branca &mdash; Kala</span>
+      <span class="badge badge--ok">Otimizado</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/caixa-termica-branca-113-litros-igloo-279411-kala-81054" target="_blank">/produto/caixa-termica-branca-113-litros-igloo-279411-kala-81054</a></div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="field__label">
+          SEO Title
+          <span class="field__count ok">50 caracteres</span>
+        </div>
+        <div class="field__value seo-title">Caixa Térmica Igloo Branca 113L Marine Contour 120</div>
+      </div>
+      <div class="field">
+        <div class="field__label">
+          Meta Description
+          <span class="field__count ok">149 caracteres</span>
+        </div>
+        <div class="field__value meta-desc">Caixa térmica Igloo branca 113L com isolamento THERMECOOL, dobradiças de grau marítimo e régua de peixe integrada. Para praia, pesca, festas e viagens.</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Descrição</div>
+        <div class="field__value">
+          <div class="desc">
+            <h2>Caixa Térmica Igloo Branca 113L — Marine Contour 120</h2>
+            <p>A caixa térmica Igloo branca Marine Contour 120 é projetada para manter alimentos frescos e bebidas geladas em festas, viagens, pescarias e passeios na praia. Com capacidade para 113 litros e até 188 latas, é uma das opções mais completas da linha Igloo.</p>
+            <h3>Materiais e Componentes</h3>
+            <p>Construída com materiais de grau marítimo: parafusos de aço inoxidável resistentes à ferrugem, dobradiças marinhas e fechos de plástico de longa duração. O isolamento THERMECOOL garante eficiência térmica com menor impacto ambiental.</p>
+            <ul>
+              <li>Capacidade: 113L (até 188 latas)</li>
+              <li>Isolamento THERMECOOL — limpo e ecológico</li>
+              <li>Inibidores de ultravioleta na estrutura exterior</li>
+              <li>Parafusos em aço inoxidável e dobradiças de grau marítimo</li>
+              <li>Régua de peixe integrada na tampa</li>
+              <li>Bujão de drenagem rosqueado compatível com mangueira</li>
+              <li>Alças antiderrapantes e confortáveis</li>
+            </ul>
+            <h3>Especificações Técnicas</h3>
+            <p>Dimensões: 97 x 44 x 45 cm | Peso: 8,4 kg | Cor: Branca.</p>
+            <div class="desc-footer">
+              <span class="wc-label">Contagem</span>
+              <span class="wc-value">~153 palavras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 7 — Caixa Térmica com Rodas 56L -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product">
+    <div class="product__head">
+      <span class="product__code">231146</span>
+      <span class="product__name">Caixa Térmica Igloo 56L com Rodas Azul &mdash; Kala</span>
+      <span class="badge badge--ok">Otimizado</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/caixa-termica-com-rodas-azul-56-litros-igloo-923052-kala-81052" target="_blank">/produto/caixa-termica-com-rodas-azul-56-litros-igloo-923052-kala-81052</a></div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="field__label">
+          SEO Title
+          <span class="field__count ok">51 caracteres</span>
+        </div>
+        <div class="field__value seo-title">Caixa Térmica com Rodas Igloo 56 Litros Profile Ice</div>
+      </div>
+      <div class="field">
+        <div class="field__label">
+          Meta Description
+          <span class="field__count ok">152 caracteres</span>
+        </div>
+        <div class="field__value meta-desc">Caixa térmica Igloo 56 litros Profile Ice Cube com rodas, tecnologia Cool Rise e PU Thermecool. Alças telescópicas e dreno com trava. Fabricada nos EUA.</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Descrição</div>
+        <div class="field__value">
+          <div class="desc">
+            <h2>Caixa Térmica Igloo 56 Litros com Rodas — Profile Ice Cube</h2>
+            <p>A caixa térmica Igloo 56 litros Profile Ice Cube combina praticidade e alto desempenho de refrigeração. Com rodas e alças telescópicas com travas, facilita o transporte em qualquer ambiente, tornando-se ideal para festas, viagens e atividades ao ar livre.</p>
+            <h3>Tecnologia e Materiais</h3>
+            <p>A tecnologia Cool Rise garante eficiência superior de refrigeração, mantendo alimentos e bebidas na temperatura ideal por mais tempo. O material PU Thermecool oferece isolamento eficiente. Dreno com trava na parte traseira facilita o escoamento do gelo derretido.</p>
+            <ul>
+              <li>Capacidade: 56 litros</li>
+              <li>Rodas para transporte e alças telescópicas com travas</li>
+              <li>Tecnologia Cool Rise para refrigeração eficiente</li>
+              <li>Material: PU Thermecool</li>
+              <li>Dreno com trava na parte traseira</li>
+              <li>2 ganchos de suporte para bolsas e sacolas</li>
+              <li>Alças adicionais moldadas na lateral</li>
+              <li>Fabricado nos EUA</li>
+            </ul>
+            <h3>Especificações Técnicas</h3>
+            <p>Dimensões: 56 x 44 x 49 cm | Peso: 2,7 kg | Cor: Azul e Branco.</p>
+            <div class="desc-footer">
+              <span class="wc-label">Contagem</span>
+              <span class="wc-value">~162 palavras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRODUTO 8 — Inversora Bambozzi 250 Ultra -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <div class="product">
+    <div class="product__head">
+      <span class="product__code">210160</span>
+      <span class="product__name">Inversora de Solda A Industrial 250 Ultra 220V &mdash; Bambozzi</span>
+      <span class="badge badge--ok">Otimizado</span>
+      <div class="product__url"><a href="https://www.ultramaquinas.com.br/produto/inversora-de-solda-a-industrial-250-ultra-220v-mono-d61030-000-bambozzi-78104" target="_blank">/produto/inversora-de-solda-a-industrial-250-ultra-220v-mono-d61030-000-bambozzi-78104</a></div>
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="field__label">
+          SEO Title
+          <span class="field__count ok">50 caracteres</span>
+        </div>
+        <div class="field__value seo-title">Máquina de Solda Bambozzi 250 Inversora Ultra 220V</div>
+      </div>
+      <div class="field">
+        <div class="field__label">
+          Meta Description
+          <span class="field__count ok">147 caracteres</span>
+        </div>
+        <div class="field__value meta-desc">Máquina de solda Bambozzi 250 inversora TIG DC 220V, fator 250A@60%, IP21 e eletrodos até 5mm. Para serralharias, manutenção mecânica e indústrias.</div>
+      </div>
+      <div class="field">
+        <div class="field__label">Descrição</div>
+        <div class="field__value">
+          <div class="desc">
+            <h2>Máquina de Solda Bambozzi 250 — Inversora TIG DC 220V</h2>
+            <p>A máquina de solda Bambozzi 250 Ultra é uma inversora TIG DC de alta precisão, projetada para soldagem de aço, alumínio e titânio. Opera em 220V monofásico com fator de trabalho de 200A@100% e 250A@60%, garantindo máximo desempenho em uso contínuo.</p>
+            <h3>Especificações Técnicas</h3>
+            <p>Compacta (230 x 150 x 410 mm) e com apenas 8 kg, combina portabilidade com robustez. A auto proteção contra carga excessiva e a classe de proteção IP21 asseguram segurança e durabilidade.</p>
+            <ul>
+              <li>Tensão de alimentação: 220V monofásico</li>
+              <li>Potência Máxima Aparente: 11 KVA | Corrente: 50A</li>
+              <li>Tensão em Vazio: 77V</li>
+              <li>Faixa de Ajuste (eletrodo): 1,6 a 5,0 mm</li>
+              <li>Fator de Trabalho: 200A@100% | 250A@60%</li>
+              <li>Classe de Proteção: IP21 | Peso: 8 kg</li>
+              <li>Dimensões: 230 x 150 x 410 mm (A x L x C)</li>
+            </ul>
+            <h3>Aplicações</h3>
+            <p>Indicada para manutenção mecânica, reparação de moldes, serralharias, fabricação de móveis e indústrias em geral. Permite processo TIG DC (tocha não inclusa). Acompanha cabo positivo com porta eletrodo e cabo negativo com garra.</p>
+            <div class="desc-footer">
+              <span class="wc-label">Contagem</span>
+              <span class="wc-value">~158 palavras</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>
