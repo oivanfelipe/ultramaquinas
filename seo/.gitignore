@@ -1,0 +1,13 @@
+# Credenciais — nunca versionar
+.env
+gsc_credentials.json
+*.json.key
+
+# Saídas do pipeline
+output/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
