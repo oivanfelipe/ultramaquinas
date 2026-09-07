@@ -1050,8 +1050,11 @@ function showTab(t) {
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + t).classList.add('active');
   document.getElementById('btn-' + t).classList.add('active');
+  // Trigger Chart.js resize for charts in the newly visible tab
+  window.dispatchEvent(new Event('resize'));
 }
 
+(function(){
 const grid_ago='rgba(0,0,0,0.06)';
 const baseOpts_ago={responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}},scales:{x:{grid:{color:grid_ago},ticks:{color:'#aaa',maxTicksLimit:8}},y:{grid:{color:grid_ago},ticks:{color:'#aaa',maxTicksLimit:5}}}};
 const C_JUL_A='rgba(27,127,62,0.85)',C_AGO_A='rgba(204,0,0,0.85)';
@@ -1079,6 +1082,8 @@ new Chart(document.getElementById('chartRevDaily-ago'),{type:'line',data:{labels
   {label:'Ago',data:pad_a(revAgo_a,31),borderColor:C_AGO_A,backgroundColor:C_AGO_LA,tension:.3,pointRadius:0,borderWidth:2,fill:true}
 ]},options:{...baseOpts_ago,plugins:{legend:{display:true,labels:{color:'#555',boxWidth:10,font:{size:10,family:'Montserrat'}}},tooltip:{callbacks:{label:c=>` R$ ${(c.raw||0).toLocaleString('pt-BR')}`}}}}});
 
+})();
+(function(){
 
 Chart.defaults.color='#888';Chart.defaults.font.family="'Montserrat',sans-serif";Chart.defaults.font.size=10;
 const grid='rgba(0,0,0,0.06)';
@@ -1116,6 +1121,8 @@ new Chart(document.getElementById('chartRevDaily-jul'),{type:'line',data:{labels
   {label:'Jul',data:pad(revJul,31),borderColor:C_JUL,backgroundColor:C_JUL_L,tension:.3,pointRadius:0,borderWidth:2,fill:true}
 ]},options:{...baseOpts,plugins:{legend:{display:true,labels:{color:'#555',boxWidth:10,font:{size:10,family:'Montserrat'}}},tooltip:{callbacks:{label:c=>` R$ ${(c.raw||0).toLocaleString('pt-BR')}`}}}}});
 
+})();
+(function(){
 
 Chart.defaults.color = '#888';
 Chart.defaults.font.family = "'Montserrat', sans-serif";
@@ -1207,6 +1214,7 @@ new Chart(document.getElementById('chartRevDaily-jun'),{
     tooltip:{callbacks:{label:c=>` R$ ${(c.raw||0).toLocaleString('pt-BR')}`}}}}
 });
 
+})();
 </script>
 </body>
 </html>
