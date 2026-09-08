@@ -1,0 +1,4 @@
+composio-core==0.7.21
+aiohttp
+uvicorn
+pyperclip
