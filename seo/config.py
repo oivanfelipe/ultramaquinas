@@ -24,9 +24,15 @@ GOOGLE_ANALYTICS_PROPERTY_ID = os.getenv("GOOGLE_ANALYTICS_PROPERTY_ID", "")  # 
 # Configurar para pesquisar apenas resultados orgânicos do Google.com.br
 GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID", "")  # TODO: criar CSE e preencher
 
+# ─── Composio ────────────────────────────────────────────────────────────────────
+# Chave de API do Composio (platform.composio.dev → Settings → API Keys)
+# Quando configurada, o GSC é consultado via Composio em vez de Service Account direto.
+COMPOSIO_API_KEY = os.getenv("COMPOSIO_API_KEY", "")
+COMPOSIO_BASE_URL = "https://backend.composio.dev/api/v3.1"
+
 # ─── Google Search Console ───────────────────────────────────────────────────────
-# A GSC API requer OAuth2 ou Service Account (não funciona com API key simples).
-# Coloque o arquivo JSON do service account no diretório seo/ e configure o path:
+# Fallback: Service Account JSON quando Composio não estiver configurado.
+# Coloque o arquivo no diretório seo/ e configure o path:
 GSC_SERVICE_ACCOUNT_FILE = os.getenv("GSC_SERVICE_ACCOUNT_FILE", "gsc_credentials.json")
 
 # Propriedade no GSC (exatamente como aparece no painel)
