@@ -1,6 +1,8 @@
 # Credenciais — nunca versionar
 .env
 gsc_credentials.json
+docs_credentials.json
+*_credentials.json
 *.json.key
 
 # Saídas do pipeline
