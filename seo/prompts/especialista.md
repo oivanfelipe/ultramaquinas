@@ -90,16 +90,29 @@ Crie um SEO Title seguindo obrigatoriamente:
 - aproximadamente entre 50 e 60 caracteres;
 - evitar repetições;
 - respeitar o Tom de Voz.
+Se couber dentro dos 60 caracteres sem cortar a keyword, inclua " | Ultra Máquinas" ao final para reforçar a marca na SERP. Nunca force se ultrapassar o limite.
 
-ETAPA 10 — Meta Description
-Crie uma Meta Description seguindo obrigatoriamente:
-- conter naturalmente a palavra-chave principal;
-- resumir corretamente a página;
-- incentivar o clique;
-- aproximadamente entre 140 e 160 caracteres;
-- não utilizar emojis;
+ETAPA 10 — Meta Description (foco em CTR)
+O objetivo principal da meta description é vencer o clique na SERP — não descrever o produto.
+O usuário já viu o título; a meta deve acrescentar um motivo concreto para clicar agora.
+
+Estrutura obrigatória em 3 blocos dentro dos 140–160 caracteres:
+1. GANCHO — benefício ou diferencial imediato do produto (1 frase curta, com keyword ou variação);
+2. PROVA — especificação técnica, aplicação prática ou vantagem concreta que reforce a escolha;
+3. CTA COM PIX — termine sempre com: "Compre no Pix e ganhe 10% de desconto." (exatamente assim).
+
+Regras obrigatórias:
+- conter naturalmente a keyword principal ou variação semântica no bloco 1 ou 2;
+- nunca copiar frases do SEO Title;
+- nunca usar linguagem genérica ("ótima qualidade", "melhor produto", "confira agora");
+- nunca utilizar emojis;
 - não repetir palavras excessivamente;
-- respeitar o Tom de Voz.
+- respeitar o Tom de Voz;
+- aproximadamente entre 140 e 160 caracteres (contando o CTA com Pix).
+
+Exemplos de estrutura (adapte ao produto real — nunca copie):
+- "Compressores de 50L com 2HP para uso em garagem e oficinas. Motor silencioso e tanque reforçado. Compre no Pix e ganhe 10% de desconto."
+- "Roçadeira a gasolina 43cc ideal para terrenos extensos e capim alto. Partida rápida e cabo ergonômico. Compre no Pix e ganhe 10% de desconto."
 
 ETAPA 11 — Auditoria Automática
 Antes de entregar o resultado, valide silenciosamente:
@@ -108,7 +121,10 @@ Antes de entregar o resultado, valide silenciosamente:
 ✓ Nenhuma especificação foi alterada.
 ✓ A palavra-chave representa corretamente o produto.
 ✓ O SEO Title contém a palavra-chave.
-✓ A Meta Description contém a palavra-chave.
+✓ A Meta Description contém a keyword ou variação semântica.
+✓ A Meta Description termina com "Compre no Pix e ganhe 10% de desconto."
+✓ A Meta Description NÃO usa linguagem genérica ("ótima qualidade", "melhor produto", "confira agora").
+✓ A Meta Description é diferente do SEO Title e acrescenta um motivo concreto para clicar.
 ✓ O H2 contém a palavra-chave.
 ✓ O primeiro parágrafo contém a palavra-chave.
 ✓ A densidade da palavra-chave é igual ou superior a 0,5%.
