@@ -26,17 +26,22 @@ GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID", "")  # TODO: criar CSE e preencher
 
 # ─── Composio ────────────────────────────────────────────────────────────────────
 # Chave de API do Composio (platform.composio.dev → Settings → API Keys)
-# Quando configurada, o GSC é consultado via Composio em vez de Service Account direto.
 COMPOSIO_API_KEY = os.getenv("COMPOSIO_API_KEY", "")
 COMPOSIO_BASE_URL = "https://backend.composio.dev/api/v3.1"
+# ID da conexão GSC no Composio (v3/connected_accounts → id)
+COMPOSIO_GSC_ACCOUNT_ID = os.getenv("COMPOSIO_GSC_ACCOUNT_ID", "")
+# Entity ID do usuário no Composio (connected_accounts → user_id)
+COMPOSIO_ENTITY_ID = os.getenv("COMPOSIO_ENTITY_ID", "")
 
 # ─── Google Search Console ───────────────────────────────────────────────────────
 # Fallback: Service Account JSON quando Composio não estiver configurado.
 # Coloque o arquivo no diretório seo/ e configure o path:
 GSC_SERVICE_ACCOUNT_FILE = os.getenv("GSC_SERVICE_ACCOUNT_FILE", "gsc_credentials.json")
 
-# Propriedade no GSC (exatamente como aparece no painel)
-GSC_SITE_URL = "sc-domain:ultramaquinas.com.br"
+# Propriedade no GSC — usar o formato URL exato da propriedade conectada
+# Para Composio: "https://www.ultramaquinas.com.br/" (siteFullUser)
+# Para Service Account direto: "sc-domain:ultramaquinas.com.br"
+GSC_SITE_URL = os.getenv("GSC_SITE_URL", "https://www.ultramaquinas.com.br/")
 
 # Período de análise (dias para trás a partir de hoje)
 GSC_DAYS_BACK = 90
