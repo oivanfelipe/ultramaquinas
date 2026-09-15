@@ -6,17 +6,17 @@ Uso: python main.py <url> [url2 url3 ...]
 
 import argparse
 import json
-import csv
 import os
 import sys
 import datetime
 
 sys.path.insert(0, os.path.dirname(__file__))
-from config import OUTPUT_DIR, OUTPUT_CSV, OUTPUT_JSON
+from config import OUTPUT_DIR, OUTPUT_CSV, OUTPUT_JSON, OUTPUT_EXCEL, GOOGLE_DOCS_SHARE_EMAIL
 from pipeline.fetcher import fetch_page_content
 from pipeline.gsc import query_gsc, pick_keyword
 from pipeline.serp import run_serp_analysis
 from pipeline.optimizer import optimize
+from pipeline.exporters import export_excel, export_google_doc
 
 
 def _ensure_output_dir():
@@ -97,37 +97,27 @@ def run(urls: list[str]) -> list[dict]:
         result["processed_at"] = datetime.datetime.now().isoformat()
         results.append(result)
 
-    # Salva JSON
+    # Salva JSON completo
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     _log(f"\nJSON salvo em: {OUTPUT_JSON}")
 
-    # Salva CSV (campos planos)
-    csv_rows = []
-    for r in results:
-        descricao = r.get("descricao", {})
-        csv_rows.append({
-            "url": r.get("url", ""),
-            "keyword_principal": r.get("keyword_principal", ""),
-            "seo_title": r.get("seo_title", ""),
-            "seo_title_chars": r.get("seo_title_chars", ""),
-            "meta_description": r.get("meta_description", ""),
-            "meta_description_chars": r.get("meta_description_chars", ""),
-            "h2": descricao.get("h2", ""),
-            "intro": descricao.get("intro", ""),
-            "conclusao": descricao.get("conclusao", ""),
-            "word_count": r.get("word_count", ""),
-            "gaps_endereçados": "; ".join(r.get("gaps_endereçados", [])),
-            "error": r.get("error", ""),
-            "processed_at": r.get("processed_at", ""),
-        })
+    # Salva Excel (URL | SEO Title | Meta Description)
+    try:
+        excel_path = export_excel(results, OUTPUT_EXCEL)
+        _log(f"Excel salvo em: {excel_path}")
+    except Exception as e:
+        _log(f"AVISO: Excel não gerado — {e}")
 
-    if csv_rows:
-        with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=csv_rows[0].keys())
-            writer.writeheader()
-            writer.writerows(csv_rows)
-        _log(f"CSV salvo em: {OUTPUT_CSV}")
+    # Cria Google Doc (padrão + HTML por produto)
+    try:
+        share = GOOGLE_DOCS_SHARE_EMAIL or None
+        doc_url = export_google_doc(results, share_with=share)
+        _log(f"Google Doc criado: {doc_url}")
+    except FileNotFoundError as e:
+        _log(f"AVISO: Google Doc não criado — {e}")
+    except Exception as e:
+        _log(f"AVISO: Google Doc não criado — {e}")
 
     return results
 

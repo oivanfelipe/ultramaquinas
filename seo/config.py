@@ -68,7 +68,15 @@ FETCH_HEADERS = {
     "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
 }
 
+# ─── Google Docs export ──────────────────────────────────────────────────────────
+# Service Account JSON com escopos: documents + drive.file
+# Pode ser a mesma conta do GSC se tiver os escopos adicionais.
+GOOGLE_DOCS_SERVICE_ACCOUNT_FILE = os.getenv("GOOGLE_DOCS_SERVICE_ACCOUNT_FILE", "gsc_credentials.json")
+# E-mail para compartilhar automaticamente o Google Doc gerado (opcional)
+GOOGLE_DOCS_SHARE_EMAIL = os.getenv("GOOGLE_DOCS_SHARE_EMAIL", "")
+
 # ─── Output ─────────────────────────────────────────────────────────────────────
 OUTPUT_DIR = "output"
 OUTPUT_CSV = "output/resultados_seo.csv"
 OUTPUT_JSON = "output/resultados_seo.json"
+OUTPUT_EXCEL = "output/seo_metadata.xlsx"
