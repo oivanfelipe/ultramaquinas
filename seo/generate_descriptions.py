@@ -15,7 +15,7 @@ DESCRIPTIONS = [
         "seo_title": "Cadeira de Pesca Dobrável Alvorada Nautika | Ultra Máquinas",
         "meta_description": "Leve e resistente: armação reforçada em aço, bolso lateral e assento em brim reforçado. Para camping e pesca. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Cadeira de Pesca Dobrável Alvorada Nautika — Conforto e Resistência à Beira da Água",
+            "h2": "Cadeira de Pesca Dobrável Alvorada Nautika",
             "intro": "Horas de espera à beira d'água exigem uma cadeira que aguente o tranco. A Alvorada da Nautika tem estrutura tubular de aço galvanizado, assento em lona brim e peso reduzido para levar a qualquer ponto de pesca sem esforço.",
             "h3_sections": [
                 {
@@ -53,7 +53,7 @@ DESCRIPTIONS = [
         "seo_title": "Mesa Camping Alumínio com 4 Banquetas GH200 | Ultra Máquinas",
         "meta_description": "Mesa de camping com 4 banquetas em alumínio: montagem rápida, design compacto, perfeita para acampar ou praia. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Mesa Dobrável de Camping com 4 Banquetas GH200 — Refeições ao Ar Livre sem Complicação",
+            "h2": "Mesa Dobrável de Camping com 4 Banquetas GH200",
             "intro": "O conjunto Mesa Dobrável GH200 da Globalmix inclui mesa e 4 banquetas em alumínio, tudo desmontável e compacto para caber no porta-malas. Funciona em acampamentos, praias, pescarias e piqueniques.",
             "h3_sections": [
                 {
@@ -91,7 +91,7 @@ DESCRIPTIONS = [
         "seo_title": "Barraca Infantil 2m com Bolinhas e Bolsa | Ultra Máquinas",
         "meta_description": "Barraca infantil 2x1m com bolinhas inclusas e bolsa para transporte — diversão garantida dentro de casa. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Barraquinha Infantil 2m × 1m com Bolinhas — Cantinho de Aventura para Crianças",
+            "h2": "Barraquinha Infantil 2m × 1m com Bolinhas",
             "intro": "A Barraca Infantil BW065 da Importway tem 2 metros de comprimento por 1 metro de largura: espaço para uma ou mais crianças brincarem com as bolinhas inclusas. O tecido é poliéster com costuras reforçadas e janelas teladas para ventilação.",
             "h3_sections": [
                 {
@@ -130,7 +130,7 @@ DESCRIPTIONS = [
         "seo_title": "Ventilador Delta Premium 60cm Bivolt Preto | Ultra Máquinas",
         "meta_description": "Alto desempenho: ventilador de parede Venti Delta Premium 60cm, bivolt, 6 pás — ideal para ambientes grandes. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Ventilador de Parede Delta Premium 60cm — Potência Profissional para Ambientes Grandes",
+            "h2": "Ventilador de Parede Delta Premium 60cm",
             "intro": "Com 6 pás em alumínio, motor bivolt e 60cm de diâmetro, o Ventilador de Parede Delta Premium move grandes volumes de ar em galpões, oficinas, salões comerciais e residências amplas — com menos barulho do que o tamanho sugere.",
             "h3_sections": [
                 {
@@ -169,7 +169,7 @@ DESCRIPTIONS = [
         "seo_title": "Esteira de Praia Palha Natural 180x70cm Bel | Ultra Máquinas",
         "meta_description": "Esteira de praia em palha natural 180x70cm — resistente, sustentável e fácil de enrolar. Cores sortidas. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Esteira de Praia em Palha Natural 180×70cm Bel — Tradição, Conforto e Sustentabilidade",
+            "h2": "Esteira de Praia em Palha Natural 180×70cm Bel",
             "intro": "A Esteira de Praia Bel em palha natural tem 180×70cm — espaço para um adulto se deitar com folga. Resiste ao sol e à areia, fácil de sacudir e de enrolar para carregar. Cores sortidas.",
             "h3_sections": [
                 {
@@ -208,7 +208,7 @@ DESCRIPTIONS = [
         "seo_title": "Cadeira Praia Alta Lazy Mormaii Alumínio | Ultra Máquinas",
         "meta_description": "Cadeira de praia alta em alumínio resistente, design Lazy by Mormaii — estrutura leve com conforto superior. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Cadeira de Praia Alta Lazy Mormaii em Alumínio — Conforto de Quem Entende de Verão",
+            "h2": "Cadeira de Praia Alta Lazy Mormaii em Alumínio",
             "intro": "A Cadeira de Praia Alta Lazy by Mormaii tem assento elevado: sentar e levantar exige menos esforço, a areia voada fica mais longe e a visibilidade da praia melhora. Estrutura em alumínio resistente à maresia.",
             "h3_sections": [
                 {
@@ -246,7 +246,7 @@ DESCRIPTIONS = [
         "seo_title": "Cama Dobrável Solteiro Kayman Camping NTK | Ultra Máquinas",
         "meta_description": "Cama de camping dobrável para solteiro em estrutura de aço tubular resistente — fácil de montar e transportar. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Cama Dobrável Solteiro Kayman NTK — Durma Bem em Qualquer Aventura",
+            "h2": "Cama Dobrável Solteiro Kayman NTK",
             "intro": "Dormir no chão no camping tem um custo no dia seguinte. A Cama Dobrável Kayman da NTK tem estrutura tubular de aço, leito elevado do chão e montagem sem ferramentas.",
             "h3_sections": [
                 {
@@ -285,7 +285,7 @@ DESCRIPTIONS = [
         "seo_title": "Mesa NTK Robust 80cm com Ajuste de Altura | Ultra Máquinas",
         "meta_description": "Mesa dobrável NTK Robust com ajuste de altura até 80cm — pés reguláveis, tampo em MDF reforçado e estrutura em aço. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Mesa NTK Robust 80cm com Ajuste de Altura — Versátil para Qualquer Configuração",
+            "h2": "Mesa NTK Robust 80cm com Ajuste de Altura",
             "intro": "Os quatro pés da Mesa Robust 80cm da NTK são reguláveis em múltiplas posições. Ela se adapta a cadeiras de diferentes alturas, ao uso em pé ou a qualquer configuração que o acampamento exigir.",
             "h3_sections": [
                 {
@@ -324,7 +324,7 @@ DESCRIPTIONS = [
         "seo_title": "Cadeira de Praia Reclinável Copacabana Rosa Botafogo",
         "meta_description": "Cadeira de praia rosa com 5 posições de reclinação — armação em alumínio leve e tecido resistente à areia. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Cadeira de Praia Copacabana Reclinável Rosa — Estilo e Conforto da Botafogo",
+            "h2": "Cadeira de Praia Copacabana Reclinável Rosa",
             "intro": "A Cadeira de Praia Copacabana da Botafogo tem 5 posições de reclinação e cor rosa. Boa para tomar sol, ler ou contemplar o mar — o mecanismo de trava lateral opera com uma só mão.",
             "h3_sections": [
                 {
@@ -364,7 +364,7 @@ DESCRIPTIONS = [
         "seo_title": "Cadeira de Praia Botafogo Reclinável | Ultra Máquinas",
         "meta_description": "Cadeira de praia Botafogo com 5 posições de reclinação — estrutura em alumínio leve e fácil de transportar. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Cadeira de Praia Botafogo Reclinável — Clássico do Verão Brasileiro",
+            "h2": "Cadeira de Praia Botafogo Reclinável",
             "intro": "A Cadeira de Praia Reclinável 5 Posições da Botafogo tem alumínio na estrutura, tecido resistente à maresia e custo-benefício que justifica a fidelidade de quem vai à praia todo fim de semana.",
             "h3_sections": [
                 {
@@ -403,7 +403,7 @@ DESCRIPTIONS = [
         "seo_title": "Lavadora Eletroplas 2CV Alta Pressão | Ultra Máquinas",
         "meta_description": "Potência 2CV para limpeza pesada: lavadora Eletroplas EL-4000V2 com alta vazão e motor elétrico robusto. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Lavadora de Alta Pressão Eletroplas 2CV EL-4000V2 — Potência Real para Limpeza Profissional",
+            "h2": "Lavadora de Alta Pressão Eletroplas 2CV EL-4000V2",
             "intro": "A Lavadora Eletroplas EL-4000V2 com motor de 2CV trabalha em regime contínuo sem superaquecimento. Desenvolvida para uso semiprofissional e profissional, remove sujeira incrustada em concreto, veículos pesados, fachadas e equipamentos industriais.",
             "h3_sections": [
                 {
@@ -442,7 +442,7 @@ DESCRIPTIONS = [
         "seo_title": "Mesa Dobrável Camping Nautika Robust 80cm | Ultra Máquinas",
         "meta_description": "Mesa dobrável de camping Nautika Robust com 80cm de altura — estrutura em aço leve e fácil de montar. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Mesa Dobrável Camping Nautika Robust 80cm — Praticidade e Solidez no Campo",
+            "h2": "Mesa Dobrável Camping Nautika Robust 80cm",
             "intro": "A Mesa Dobrável Robust 80cm da Nautika tem estrutura em aço tratado, tampo espaçoso e articulações reforçadas. Solo irregular, chuva passageira ou calor intenso — ela mantém a rigidez.",
             "h3_sections": [
                 {
@@ -481,7 +481,7 @@ DESCRIPTIONS = [
         "seo_title": "Lavadora Jaguar Turbo 2175 Libras Lavor | Ultra Máquinas",
         "meta_description": "Lavadora Lavor Jaguar Turbo com 2175 libras de pressão e 127V — potência profissional para limpeza pesada. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Lavadora Lavor Jaguar Turbo 2175 Libras — 2175 PSI em 127V",
+            "h2": "Lavadora Lavor Jaguar Turbo 2175 Libras",
             "intro": "A Lavor Jaguar Turbo chega a 2175 PSI de pressão máxima com motor de alta eficiência em 127V. Remove graxas de motor, mofo em pisos, lama compactada e resíduos de tintas que lavadoras domésticas comuns não alcançam.",
             "h3_sections": [
                 {
@@ -521,7 +521,7 @@ DESCRIPTIONS = [
         "seo_title": "Lavadora Karcher HD 498 1800W Alta Pressão | Ultra Máquinas",
         "meta_description": "Lavadora Kärcher HD 498 com 1800W de potência e alta pressão — desempenho profissional para superfícies externas. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Lavadora Kärcher HD 498 1800W — Linha Profissional Compacta",
+            "h2": "Lavadora Kärcher HD 498 1800W",
             "intro": "A Kärcher HD 498 tem 1800W de potência e pertence à linha HD — projetada para uso profissional intenso, com componentes de vida útil superior à linha K doméstica.",
             "h3_sections": [
                 {
@@ -561,7 +561,7 @@ DESCRIPTIONS = [
         "seo_title": "Ombrellone Pisa Articulado 2,50m Alumínio | Ultra Máquinas",
         "meta_description": "Ombrellone articulado com haste de alumínio 2,50m e tecido em poliéster preto — ideal para jardim e piscina. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Ombrellone Pisa Articulado 2,50m Alumínio — Sombra Total onde Você Precisar",
+            "h2": "Ombrellone Pisa Articulado 2,50m Alumínio",
             "intro": "O Ombrellone Pisa da Bel Fix tem articulação que inclina a cobertura sem mover a base. Com 2,50m de diâmetro em poliéster preto e haste de alumínio, cobre jardins, decks de piscina e áreas de lazer.",
             "h3_sections": [
                 {
@@ -600,7 +600,7 @@ DESCRIPTIONS = [
         "seo_title": "Gazebo Dobrável 3x3m Bege Bel Fix | Ultra Máquinas",
         "meta_description": "Gazebo dobrável 3x3m em poliéster bege resistente — montagem sem ferramentas e estrutura em aço tratado. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Gazebo Dobrável 3×3m Bel Fix — 9m² de Cobertura em Menos de 10 Minutos",
+            "h2": "Gazebo Dobrável 3×3m Bel Fix",
             "intro": "O Gazebo Dobrável 3×3m Bel Fix tem estrutura sanfona em aço tratado e teto em poliéster bege impermeabilizado. Uma pessoa monta em menos de 10 minutos, sem ferramentas.",
             "h3_sections": [
                 {
@@ -640,7 +640,7 @@ DESCRIPTIONS = [
         "seo_title": "Caixa Térmica Açaí 19 Litros Bel 71909 | Ultra Máquinas",
         "meta_description": "Caixa térmica Açaí 19 litros — mantém sua bebida gelada por horas com isolamento térmico de alta performance. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Caixa Térmica Açaí 19 Litros Bel — Bebidas Geladas do Começo ao Fim do Dia",
+            "h2": "Caixa Térmica Açaí 19 Litros Bel",
             "intro": "A Caixa Térmica Açaí da Bel tem 19 litros — espaço para cerca de 20 latinhas — e paredes de poliuretano expandido de alta densidade. Gelo que dura horas mesmo sob sol direto.",
             "h3_sections": [
                 {
@@ -679,7 +679,7 @@ DESCRIPTIONS = [
         "seo_title": "Gazebo Tubular 2m Polietileno Azul BelFix | Ultra Máquinas",
         "meta_description": "Tenda gazebo tubular 2m em polietileno azul — estrutura leve e montagem rápida para eventos ao ar livre. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Tenda Gazebo Tubular 2m BelFix — Proteção Rápida para Qualquer Evento ao Ar Livre",
+            "h2": "Tenda Gazebo Tubular 2m BelFix",
             "intro": "A Tenda Gazebo Tubular 2m da BelFix tem estrutura tubular metálica galvanizada e cobertura em polietileno azul. Uma pessoa monta, pernas ajustáveis para terrenos irregulares.",
             "h3_sections": [
                 {
@@ -719,7 +719,7 @@ DESCRIPTIONS = [
         "seo_title": "Ombrellone Suspenso Giratório 360° Búzios 3m + Base Bel",
         "meta_description": "Ombrellone suspenso giratório 360°, 3m de cobertura com base de água e areia 50L incluída — sombra total. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Ombrellone Suspenso Giratório 360° Búzios 3m — Sem Mastro Central no Espaço Útil",
+            "h2": "Ombrellone Suspenso Giratório 360° Búzios 3m",
             "intro": "O Ombrellone Suspenso Búzios da Bel tem haste lateral e cobertura de 3m que gira 360°. Você direciona a sombra sem mover a base nem se levantar. Acompanha base de 50 litros.",
             "h3_sections": [
                 {
@@ -758,7 +758,7 @@ DESCRIPTIONS = [
         "seo_title": "Guarda-Sol Bagum Alumínio 2m Azul Royal Bel | Ultra Máquinas",
         "meta_description": "Guarda-sol Bagum com haste de alumínio 2m e tecido azul royal — leve e resistente para praia ou piscina. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Guarda-Sol Bagum Alumínio 2m Azul Royal Bel — Clássico do Verão Brasileiro",
+            "h2": "Guarda-Sol Bagum Alumínio 2m Azul Royal Bel",
             "intro": "O Guarda-Sol Bagum da Bel tem haste em alumínio resistente à maresia, cobertura de 2m em azul royal e cerca de 1,8 kg — fácil de carregar embaixo do braço.",
             "h3_sections": [
                 {
@@ -797,7 +797,7 @@ DESCRIPTIONS = [
         "seo_title": "Ombrellone Retangular 4,50m Oversize Marrom Bel Fix",
         "meta_description": "Ombrellone retangular de 4,50m tipo quiosque — ideal para áreas extensas com cobertura ampla e estrutura robusta. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Ombrellone Retangular Oversize 4,50m Bel Fix — Cobertura de Quiosque para Áreas Extensas",
+            "h2": "Ombrellone Retangular Oversize 4,50m Bel Fix",
             "intro": "O Ombrellone Retangular Oversize 4,50m da Bel Fix cobre mesas longas, conjuntos de piscina em linha ou decks alongados onde um ombrellone circular deixaria espaços descobertos.",
             "h3_sections": [
                 {
@@ -836,7 +836,7 @@ DESCRIPTIONS = [
         "seo_title": "Base Guarda-Sol 18kg Água/Areia Bel Fix | Ultra Máquinas",
         "meta_description": "Base para guarda-sol e ombrellone com 18kg preenchida com água ou areia — suporte estável para uso na praia. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Base para Guarda-Sol e Ombrellone 18kg Bel Fix — Estabilidade sem Furar o Piso",
+            "h2": "Base para Guarda-Sol e Ombrellone 18kg Bel Fix",
             "intro": "Para usar guarda-sol em deck de madeira, porcelanato, concreto polido ou terraço, a Base 18kg Bel Fix preenche com água ou areia e ancora a haste com firmeza — sem parafusos, sem danos à superfície.",
             "h3_sections": [
                 {
@@ -876,7 +876,7 @@ DESCRIPTIONS = [
         "seo_title": "Cadeira Espreguiçadeira Alumínio Marrom Bel | Ultra Máquinas",
         "meta_description": "Espreguiçadeira em alumínio marrom resistente — ideal para piscina, jardim e área de lazer com design leve. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Cadeira Espreguiçadeira em Alumínio Marrom Bel — Relaxe em Estilo na Beira da Piscina",
+            "h2": "Cadeira Espreguiçadeira em Alumínio Marrom Bel",
             "intro": "A Espreguiçadeira Bel em alumínio marrom tem comprimento estendido com suporte do corpo da cabeça aos pés, encosto reclinável em múltiplas posições e estrutura que não enferruja próxima a piscinas.",
             "h3_sections": [
                 {
@@ -915,7 +915,7 @@ DESCRIPTIONS = [
         "seo_title": "Caixa Térmica Igloo 113 Litros Branca Kala | Ultra Máquinas",
         "meta_description": "Caixa térmica Igloo 113L — alto isolamento, dreno de fácil acesso e tampa robusta para pescaria e acampamento. Compre no Pix e ganhe 10% de desconto.",
         "descricao": {
-            "h2": "Caixa Térmica Igloo 113 Litros — Capacidade e Isolamento de Nível Profissional",
+            "h2": "Caixa Térmica Igloo 113 Litros",
             "intro": "A Caixa Térmica Igloo 113 Litros tem espaço para mais de 120 latas ou dezenas de quilos de pescado. O gelo dura de 3 a 5 dias em condições normais graças à espuma de poliuretano de alta densidade nas paredes.",
             "h3_sections": [
                 {
