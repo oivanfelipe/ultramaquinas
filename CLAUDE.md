@@ -13,4 +13,4 @@ Resumo:
 - A key fica só no ambiente. Nunca em arquivo versionado, commit, log ou mensagem; nunca peça para o usuário colá-la no chat.
 - Com a key no ambiente, colete os meses fechados que faltam em `dados/`. Sem ela, diga qual é a correta e não invente números.
 - Coletar é só leitura. Alterar `index.html`, abrir PR ou mesclar só quando o usuário pedir.
-- Há uma revisão agendada para 04/10/2026 (dados de Setembro e merge do PR #2). Não altere esse agendamento.
+- Há uma rotina mensal no dia 05 que atualiza o relatório e mescla na `main` (detalhes no `COMPOSIO.md`). Não altere esse agendamento.

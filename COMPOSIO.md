@@ -71,7 +71,11 @@ Conferidas contra o relatório publicado de Agosto/2026 (9.571 cliques, 1.689.30
 Cada `dados/AAAA-MM.json` traz: totais GSC e GA4 orgânico, cliques e receita por dia, top 50 keywords e top 50 páginas, mais os campos de controle `data_state_gsc`, `dias_gsc` e `completo`.
 
 - `2026-08.json`: completo.
-- `2026-09.json`: preliminar (GSC ainda sem o dia 30 como final). Existe uma revisão agendada para 04/10/2026 às 10h (horário de Brasília) que atualiza esse arquivo e a aba de Setembro; **não mexa nesse agendamento**.
+- `2026-09.json`: preliminar (GSC ainda sem o dia 30 como final). Será finalizado pela rotina do dia 05 (abaixo).
+
+## Rotina mensal
+
+Todo dia **05, às 9h48 (Brasília)** roda uma rotina que coleta o mês fechado, gera a aba no `index.html`, valida no navegador e **mescla na `main`** (autorizado pelo usuário). Em 05/10/2026 ela finaliza o PR #2 (Setembro) com os dados finais. Se o GSC ainda não tiver fechado o último dia, ela não publica e repete a checagem em 24h (até 3 vezes). **Não altere esse agendamento sem o usuário pedir.**
 
 ## 6. Relatório (`index.html`)
 
