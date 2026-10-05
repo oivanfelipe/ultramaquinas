@@ -71,7 +71,7 @@ Conferidas contra o relatório publicado de Agosto/2026 (9.571 cliques, 1.689.30
 Cada `dados/AAAA-MM.json` traz: totais GSC e GA4 orgânico, cliques e receita por dia, top 50 keywords e top 50 páginas, mais os campos de controle `data_state_gsc`, `dias_gsc` e `completo`.
 
 - `2026-08.json`: completo.
-- `2026-09.json`: preliminar (GSC ainda sem o dia 30 como final). Será finalizado pela rotina do dia 05 (abaixo).
+- `2026-09.json`: completo (finalizado em 05/10/2026 pela rotina do dia 05).
 
 ## Rotina mensal
 
