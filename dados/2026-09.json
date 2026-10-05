@@ -4,13 +4,13 @@
   "2026-09-01",
   "2026-09-30"
  ],
- "data_state_gsc": "all",
+ "data_state_gsc": "final",
  "dias_gsc": 30,
- "completo": false,
+ "completo": true,
  "gsc": {
-  "cliques": 9291,
-  "impressoes": 1639773,
-  "ctr_pct": 0.5666,
+  "cliques": 9295,
+  "impressoes": 1639775,
+  "ctr_pct": 0.5668,
   "posicao": 6.9102
  },
  "ga4_organico": {
@@ -50,7 +50,7 @@
   144,
   405,
   382,
-  361
+  365
  ],
  "receita_diaria": [
   0,
@@ -116,9 +116,9 @@
   {
    "keyword": "brocha",
    "cliques": 16,
-   "impressoes": 10013,
-   "ctr": 0.0015979227004893639,
-   "posicao": 8.36202936182962
+   "impressoes": 10022,
+   "ctr": 0.0015964877270005988,
+   "posicao": 8.366393933346638
   },
   {
    "keyword": "ultra maquinas comercial de ferramentas ltda",
@@ -165,9 +165,9 @@
   {
    "keyword": "carrinho de carga dobrável",
    "cliques": 8,
-   "impressoes": 2563,
-   "ctr": 0.0031213421771361686,
-   "posicao": 8.746390948107686
+   "impressoes": 2571,
+   "ctr": 0.0031116297160637884,
+   "posicao": 8.747569039284325
   },
   {
    "keyword": "gedore 050 171",
@@ -200,16 +200,16 @@
   {
    "keyword": "hammer ferramentas",
    "cliques": 7,
-   "impressoes": 127,
-   "ctr": 0.05511811023622047,
-   "posicao": 6.889763779527559
+   "impressoes": 128,
+   "ctr": 0.0546875,
+   "posicao": 6.875
   },
   {
    "keyword": "preço",
    "cliques": 7,
-   "impressoes": 415,
-   "ctr": 0.016867469879518072,
-   "posicao": 10.13012048192771
+   "impressoes": 421,
+   "ctr": 0.0166270783847981,
+   "posicao": 10.187648456057007
   },
   {
    "keyword": "destrava bosch",
@@ -235,9 +235,9 @@
   {
    "keyword": "panela de cerâmica",
    "cliques": 6,
-   "impressoes": 7899,
-   "ctr": 0.0007595898214963919,
-   "posicao": 3.5764020762121786
+   "impressoes": 7902,
+   "ctr": 0.0007593014426727411,
+   "posicao": 3.579979751961529
   },
   {
    "keyword": "policorte bosch gco 2000",
@@ -284,23 +284,23 @@
   {
    "keyword": "bateria parafusadeira skil 12v",
    "cliques": 5,
-   "impressoes": 46,
-   "ctr": 0.10869565217391304,
-   "posicao": 1.2826086956521738
+   "impressoes": 47,
+   "ctr": 0.10638297872340426,
+   "posicao": 1.3617021276595744
   },
   {
    "keyword": "carrinho dobravel carga",
    "cliques": 5,
-   "impressoes": 857,
-   "ctr": 0.005834305717619603,
-   "posicao": 7.340723453908985
+   "impressoes": 868,
+   "ctr": 0.00576036866359447,
+   "posicao": 7.360599078341014
   },
   {
    "keyword": "induzido martelete bosch gbh 2-24d original 220v",
    "cliques": 5,
-   "impressoes": 199,
-   "ctr": 0.02512562814070352,
-   "posicao": 5.351758793969849
+   "impressoes": 201,
+   "ctr": 0.024875621890547265,
+   "posicao": 5.358208955223881
   },
   {
    "keyword": "ultra maquinas aricanduva",
@@ -326,16 +326,16 @@
   {
    "keyword": "belfix",
    "cliques": 4,
-   "impressoes": 417,
-   "ctr": 0.009592326139088728,
-   "posicao": 8.086330935251798
+   "impressoes": 424,
+   "ctr": 0.009433962264150943,
+   "posicao": 8.110849056603772
   },
   {
    "keyword": "bomba manual para poço",
    "cliques": 4,
-   "impressoes": 167,
-   "ctr": 0.023952095808383235,
-   "posicao": 5.167664670658683
+   "impressoes": 169,
+   "ctr": 0.023668639053254437,
+   "posicao": 5.183431952662722
   },
   {
    "keyword": "cadeira de pesca dobrável",
@@ -354,9 +354,9 @@
   {
    "keyword": "carrinho carga dobravel",
    "cliques": 4,
-   "impressoes": 358,
-   "ctr": 0.0111731843575419,
-   "posicao": 7.17877094972067
+   "impressoes": 362,
+   "ctr": 0.011049723756906077,
+   "posicao": 7.204419889502763
   },
   {
    "keyword": "esmerilhadeira bosch gws 7-115",
@@ -368,9 +368,9 @@
   {
    "keyword": "frigideira de ceramica",
    "cliques": 4,
-   "impressoes": 11440,
-   "ctr": 0.00034965034965034965,
-   "posicao": 9.724562937062936
+   "impressoes": 11446,
+   "ctr": 0.00034946706272933774,
+   "posicao": 9.725056788397694
   },
   {
    "keyword": "gorillaz ferramentas",
@@ -382,9 +382,9 @@
   {
    "keyword": "hammer",
    "cliques": 4,
-   "impressoes": 527,
-   "ctr": 0.007590132827324478,
-   "posicao": 9.50853889943074
+   "impressoes": 534,
+   "ctr": 0.00749063670411985,
+   "posicao": 9.52247191011236
   },
   {
    "keyword": "lavadora de alta pressão power pro-2800 psi",
@@ -396,16 +396,16 @@
   {
    "keyword": "lixadeira de madeira",
    "cliques": 4,
-   "impressoes": 4131,
-   "ctr": 0.0009682885499878964,
-   "posicao": 4.867586540789155
+   "impressoes": 4137,
+   "ctr": 0.0009668842156151801,
+   "posicao": 4.8709209572153735
   },
   {
    "keyword": "lixeira para banheiro",
    "cliques": 4,
-   "impressoes": 5379,
-   "ctr": 0.0007436326454731362,
-   "posicao": 3.7640825432236475
+   "impressoes": 5381,
+   "ctr": 0.0007433562534844825,
+   "posicao": 3.7684445270395837
   },
   {
    "keyword": "loja de ferramentas campinas",
@@ -424,228 +424,228 @@
   {
    "keyword": "mini lixadeira de cinta",
    "cliques": 4,
-   "impressoes": 361,
-   "ctr": 0.0110803324099723,
-   "posicao": 3.8614958448753463
+   "impressoes": 362,
+   "ctr": 0.011049723756906077,
+   "posicao": 3.8646408839779007
   },
   {
    "keyword": "onde comprar",
    "cliques": 4,
-   "impressoes": 129,
-   "ctr": 0.031007751937984496,
-   "posicao": 13.046511627906977
+   "impressoes": 131,
+   "ctr": 0.030534351145038167,
+   "posicao": 12.961832061068701
   }
  ],
  "top_paginas": [
   {
    "url": "https://www.ultramaquinas.com.br/",
    "cliques": 679,
-   "impressoes": 14694,
-   "ctr": 0.046209337144412686,
-   "posicao": 7.874710766299169
+   "impressoes": 14715,
+   "ctr": 0.04614339109751954,
+   "posicao": 7.889840299014611
   },
   {
    "url": "https://www.ultramaquinas.com.br/nossaslojas",
    "cliques": 89,
-   "impressoes": 6306,
-   "ctr": 0.014113542657786235,
-   "posicao": 2.441325721535046
+   "impressoes": 6308,
+   "ctr": 0.014109067850348763,
+   "posicao": 2.4426125554850984
   },
   {
    "url": "https://www.ultramaquinas.com.br/pecas-de-reposicao/induzido",
    "cliques": 83,
-   "impressoes": 7021,
-   "ctr": 0.011821677823671842,
-   "posicao": 7.639510041304657
+   "impressoes": 7029,
+   "ctr": 0.01180822307582871,
+   "posicao": 7.6433347560108125
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bateria-12v-para-parafusadeira-2511-skil-72108",
    "cliques": 47,
-   "impressoes": 775,
-   "ctr": 0.06064516129032258,
-   "posicao": 5.107096774193549
+   "impressoes": 776,
+   "ctr": 0.06056701030927835,
+   "posicao": 5.106958762886598
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bateria-9-6v-parafusadeira-skil-2212-skil-f000621992-bosch-81704",
    "cliques": 41,
-   "impressoes": 769,
-   "ctr": 0.053315994798439535,
-   "posicao": 6.448634590377113
+   "impressoes": 773,
+   "ctr": 0.05304010349288486,
+   "posicao": 6.457956015523933
   },
   {
    "url": "https://www.ultramaquinas.com.br/casa/carrinho-dobravel",
    "cliques": 39,
-   "impressoes": 8738,
-   "ctr": 0.004463263904783703,
-   "posicao": 8.397917143511101
+   "impressoes": 8759,
+   "ctr": 0.004452563077976938,
+   "posicao": 8.401301518438178
   },
   {
    "url": "https://www.ultramaquinas.com.br/fabricante/hammer",
    "cliques": 36,
-   "impressoes": 1579,
-   "ctr": 0.022799240025332488,
-   "posicao": 8.487650411652945
+   "impressoes": 1590,
+   "ctr": 0.022641509433962263,
+   "posicao": 8.49622641509434
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/desengripante-bd-200-destrava-spray-200ml-1607000cw4-bosch-82210",
    "cliques": 36,
-   "impressoes": 318,
-   "ctr": 0.11320754716981132,
-   "posicao": 3.707547169811321
+   "impressoes": 322,
+   "ctr": 0.11180124223602485,
+   "posicao": 3.770186335403727
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/lavadora-de-alta-pressao-power-pro-2800-2800psi-power-70222",
    "cliques": 35,
-   "impressoes": 554,
-   "ctr": 0.0631768953068592,
-   "posicao": 4.595667870036101
+   "impressoes": 561,
+   "ctr": 0.062388591800356503,
+   "posicao": 4.6559714795008915
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/nivel-de-aluminio-2-00m-com-3-bolhas-magnetico-mtx-72157",
    "cliques": 35,
-   "impressoes": 3741,
-   "ctr": 0.009355787222667736,
-   "posicao": 3.73616680032077
+   "impressoes": 3746,
+   "ctr": 0.009343299519487454,
+   "posicao": 3.739989321943406
   },
   {
    "url": "https://www.ultramaquinas.com.br/ferramentas-eletricas/lixadeiras-p/madeira",
    "cliques": 34,
-   "impressoes": 16156,
-   "ctr": 0.0021044813072542707,
-   "posicao": 8.695035899975242
+   "impressoes": 16179,
+   "ctr": 0.0021014895852648494,
+   "posicao": 8.699425180789913
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/serra-rapida-14-2-000w-gco-2000-bosch-71084",
    "cliques": 33,
-   "impressoes": 816,
-   "ctr": 0.04044117647058824,
-   "posicao": 3.549019607843137
+   "impressoes": 817,
+   "ctr": 0.04039167686658507,
+   "posicao": 3.563035495716034
   },
   {
    "url": "https://www.ultramaquinas.com.br/pecas-de-reposicao/pecas",
    "cliques": 31,
-   "impressoes": 1870,
-   "ctr": 0.016577540106951873,
-   "posicao": 8.610160427807486
+   "impressoes": 1881,
+   "ctr": 0.01648059542796385,
+   "posicao": 8.62254120148857
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/esmerilhadeira-angular-4-1-2-gws-7-115-com-3-discos-bosch-71522",
    "cliques": 31,
-   "impressoes": 2189,
-   "ctr": 0.01416171767930562,
-   "posicao": 5.987208771128369
+   "impressoes": 2199,
+   "ctr": 0.01409731696225557,
+   "posicao": 6.041837198726694
   },
   {
    "url": "https://www.ultramaquinas.com.br/pecas-de-reposicao/escova-de-carvao",
    "cliques": 30,
-   "impressoes": 3261,
-   "ctr": 0.00919963201471941,
-   "posicao": 9.529285495246857
+   "impressoes": 3275,
+   "ctr": 0.00916030534351145,
+   "posicao": 9.536488549618321
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/macaco-hidraulico-jacare-ate-3-5-toneladas-portatil-5113555-stels-71067",
    "cliques": 30,
-   "impressoes": 3144,
-   "ctr": 0.009541984732824428,
-   "posicao": 4.723918575063613
+   "impressoes": 3154,
+   "ctr": 0.009511731135066582,
+   "posicao": 4.7339885859226385
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/caixa-plastica-reforcada-para-massa-e-concreto-40l-zumplast-71413",
    "cliques": 29,
-   "impressoes": 1763,
-   "ctr": 0.016449234259784458,
-   "posicao": 5.3601815087918325
+   "impressoes": 1770,
+   "ctr": 0.01638418079096045,
+   "posicao": 5.375141242937853
   },
   {
    "url": "https://www.ultramaquinas.com.br/pecas-de-reposicao/estator-e-bobina",
    "cliques": 28,
-   "impressoes": 1899,
-   "ctr": 0.01474460242232754,
-   "posicao": 7.661400737230121
+   "impressoes": 1905,
+   "ctr": 0.014698162729658792,
+   "posicao": 7.665616797900262
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bateria-para-parafusadeira-12v-bosch-2-6ah-73755",
    "cliques": 28,
-   "impressoes": 4298,
-   "ctr": 0.006514657980456026,
-   "posicao": 6.017915309446254
+   "impressoes": 4305,
+   "ctr": 0.0065040650406504065,
+   "posicao": 6.022299651567944
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/furadeira-e-parafusadeira-3-8-12v-2511-skil-75827",
    "cliques": 26,
-   "impressoes": 4413,
-   "ctr": 0.005891683661907999,
-   "posicao": 4.806480852028098
+   "impressoes": 4418,
+   "ctr": 0.005885015844273427,
+   "posicao": 4.812132186509733
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/serra-rapida-policorte-12-f-12-sem-motor-aas1010001-ferrari-71316",
    "cliques": 26,
-   "impressoes": 578,
-   "ctr": 0.04498269896193772,
-   "posicao": 3.6176470588235294
+   "impressoes": 579,
+   "ctr": 0.044905008635578586,
+   "posicao": 3.6252158894645943
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/martelo-demolidor-30kg-2000w-gsh-27-vc-bosch-73314",
    "cliques": 24,
-   "impressoes": 11505,
-   "ctr": 0.0020860495436766623,
-   "posicao": 5.248239895697523
+   "impressoes": 11517,
+   "ctr": 0.002083876009377442,
+   "posicao": 5.253972388642876
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/corda-bombeiro-12mm-100-metros-nr18-pampa-70197",
    "cliques": 22,
-   "impressoes": 2882,
-   "ctr": 0.007633587786259542,
-   "posicao": 7.370229007633588
+   "impressoes": 2893,
+   "ctr": 0.0076045627376425855,
+   "posicao": 7.391634980988593
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/extratora-de-limpeza-profissional-25l-1400w-inox-clean-220v-163235-worker-76976",
    "cliques": 21,
-   "impressoes": 2634,
-   "ctr": 0.007972665148063782,
-   "posicao": 9.320804859529233
+   "impressoes": 2652,
+   "ctr": 0.007918552036199095,
+   "posicao": 9.335972850678733
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/mandril-porta-ferramenta-original-gbh-2-24d-bosch-74203",
    "cliques": 21,
-   "impressoes": 1838,
-   "ctr": 0.011425462459194777,
-   "posicao": 5.623503808487486
+   "impressoes": 1848,
+   "ctr": 0.011363636363636364,
+   "posicao": 5.632034632034632
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bateria-parafusadeira-bosch-compativel-com-gsr-1000-smart-74463",
    "cliques": 20,
-   "impressoes": 6703,
-   "ctr": 0.002983738624496494,
-   "posicao": 5.336565716843205
+   "impressoes": 6709,
+   "ctr": 0.002981070204203309,
+   "posicao": 5.337606200626024
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/brocha-retangular-grande-20x76x190mm-0-2302-compel-71817",
    "cliques": 20,
-   "impressoes": 11156,
-   "ctr": 0.0017927572606669057,
-   "posicao": 8.06669057009681
+   "impressoes": 11173,
+   "ctr": 0.0017900295354873355,
+   "posicao": 8.072854202094334
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/compressor-de-ar-2-hp-24-litros-com-kit-220v-gamma-71762",
    "cliques": 20,
-   "impressoes": 512,
-   "ctr": 0.0390625,
-   "posicao": 6.408203125
+   "impressoes": 516,
+   "ctr": 0.03875968992248062,
+   "posicao": 6.5523255813953485
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bomba-dagua-submersa-3-4-680-s-hb-bombas-72266",
    "cliques": 19,
-   "impressoes": 485,
-   "ctr": 0.03917525773195876,
-   "posicao": 6.818556701030928
+   "impressoes": 494,
+   "ctr": 0.038461538461538464,
+   "posicao": 6.876518218623482
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bomba-manual-para-poco-13lt-pvc-183725-worker-77158",
    "cliques": 18,
-   "impressoes": 3025,
-   "ctr": 0.0059504132231404955,
-   "posicao": 5.0816528925619835
+   "impressoes": 3034,
+   "ctr": 0.005932762030323006,
+   "posicao": 5.089321028345418
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/interruptor-para-ferramenta-skil-3310-3311-1619pa0253-81860",
@@ -657,58 +657,58 @@
   {
    "url": "https://www.ultramaquinas.com.br/produto/limpa-contatos-spray-300ml-mp80-mundial-prime-70202",
    "cliques": 18,
-   "impressoes": 1935,
-   "ctr": 0.009302325581395349,
-   "posicao": 7.608268733850129
+   "impressoes": 1954,
+   "ctr": 0.009211873080859774,
+   "posicao": 7.627430910951894
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/protetor-auricular-silicone-com-cordao-ca-15485-dystray-75926",
    "cliques": 18,
-   "impressoes": 410,
-   "ctr": 0.04390243902439024,
-   "posicao": 3.8609756097560974
+   "impressoes": 409,
+   "ctr": 0.044009779951100246,
+   "posicao": 3.860635696821516
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/bomba-submersivel-inox-1hp-750w-395870-220v-worker-77031",
    "cliques": 17,
-   "impressoes": 883,
-   "ctr": 0.01925254813137033,
-   "posicao": 6.344280860702152
+   "impressoes": 893,
+   "ctr": 0.019036954087346025,
+   "posicao": 6.365061590145577
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/chave-biela-tipo-l-12-mm-gedore-73657",
    "cliques": 17,
-   "impressoes": 16115,
-   "ctr": 0.0010549177784672666,
-   "posicao": 3.0483400558485885
+   "impressoes": 16119,
+   "ctr": 0.0010546559960295304,
+   "posicao": 3.049320677461381
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/escova-de-carvao-127-220v-para-esmerilhadeira-gws-850-ref-1607000d3n-bosch-75591",
    "cliques": 17,
-   "impressoes": 2864,
-   "ctr": 0.005935754189944134,
-   "posicao": 7.364874301675978
+   "impressoes": 2872,
+   "ctr": 0.005919220055710306,
+   "posicao": 7.370473537604457
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/inversora-de-solda-mig-mag-powertec-305c-export-220-380v-trifasico-k14056-2-lincoln-78674",
    "cliques": 17,
-   "impressoes": 1222,
-   "ctr": 0.013911620294599018,
-   "posicao": 3.9468085106382977
+   "impressoes": 1223,
+   "ctr": 0.013900245298446443,
+   "posicao": 3.9476696647587897
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/defende-ela-spray-poly-defensor-50g-940010-nautika-76529",
    "cliques": 16,
-   "impressoes": 1679,
-   "ctr": 0.009529481834425254,
-   "posicao": 7.322215604526503
+   "impressoes": 1689,
+   "ctr": 0.009473060982830076,
+   "posicao": 7.34162226169331
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/fincapino-curto-vermelho-c-22-caixa-com-100-unidades-ancora-74889",
    "cliques": 16,
-   "impressoes": 903,
-   "ctr": 0.017718715393133997,
-   "posicao": 4.788482834994463
+   "impressoes": 907,
+   "ctr": 0.017640573318632856,
+   "posicao": 4.802646085997795
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/induzido-220v-para-tupa-skil-1831-1604010b3j-81742",
@@ -720,9 +720,9 @@
   {
    "url": "https://www.ultramaquinas.com.br/produto/interruptor-para-serra-marmore-gdc-150-gdc-151-bivolt-1607200341-bosch-74209",
    "cliques": 16,
-   "impressoes": 2104,
-   "ctr": 0.0076045627376425855,
-   "posicao": 6.272813688212928
+   "impressoes": 2112,
+   "ctr": 0.007575757575757576,
+   "posicao": 6.275094696969697
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/martelo-sem-retrocesso-cabo-em-fibra-50mm-248f-050171-gedore-80771",
@@ -734,58 +734,58 @@
   {
    "url": "https://www.ultramaquinas.com.br/produto/soprador-termico-ghg-630-dce-bosch-70989",
    "cliques": 16,
-   "impressoes": 236,
-   "ctr": 0.06779661016949153,
-   "posicao": 5.686440677966102
+   "impressoes": 237,
+   "ctr": 0.06751054852320675,
+   "posicao": 5.70042194092827
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/tenda-gazebo-dobravel-pagoda-oversize-3m-x-6m-oxford-preto-334607-bel-77671",
    "cliques": 16,
-   "impressoes": 1563,
-   "ctr": 0.010236724248240563,
-   "posicao": 7.056941778630838
+   "impressoes": 1574,
+   "ctr": 0.010165184243964422,
+   "posicao": 7.104828462515883
   },
   {
    "url": "https://www.ultramaquinas.com.br/fabricante/goodyear",
    "cliques": 15,
-   "impressoes": 494,
-   "ctr": 0.030364372469635626,
-   "posicao": 7.198380566801619
+   "impressoes": 499,
+   "ctr": 0.03006012024048096,
+   "posicao": 7.224448897795591
   },
   {
    "url": "https://www.ultramaquinas.com.br/fale-conosco",
    "cliques": 15,
-   "impressoes": 4744,
-   "ctr": 0.0031618887015177066,
-   "posicao": 2.1313237774030354
+   "impressoes": 4749,
+   "ctr": 0.003158559696778269,
+   "posicao": 2.1381343440724363
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/carregador-parafusadeira-gsr-1000-smart-15v-bosch-2019-72056",
    "cliques": 15,
-   "impressoes": 2809,
-   "ctr": 0.00533997864008544,
-   "posicao": 7.431470274118904
+   "impressoes": 2828,
+   "ctr": 0.005304101838755304,
+   "posicao": 7.436350777934936
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/cavalete-de-madeira-para-mesa-77122",
    "cliques": 15,
-   "impressoes": 3296,
-   "ctr": 0.0045509708737864075,
-   "posicao": 3.4435679611650487
+   "impressoes": 3303,
+   "ctr": 0.004541326067211626,
+   "posicao": 3.461095973357554
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/esmerilhadeira-angular-7-2-000w-gws-20-180-bosch-70957",
    "cliques": 15,
-   "impressoes": 946,
-   "ctr": 0.015856236786469344,
-   "posicao": 6.405919661733615
+   "impressoes": 962,
+   "ctr": 0.015592515592515593,
+   "posicao": 6.486486486486487
   },
   {
    "url": "https://www.ultramaquinas.com.br/produto/estator-220v-para-ferramenta-skil-3610-f000607136-bosch-81853",
    "cliques": 15,
-   "impressoes": 83,
-   "ctr": 0.18072289156626506,
-   "posicao": 6.108433734939759
+   "impressoes": 84,
+   "ctr": 0.17857142857142858,
+   "posicao": 6.130952380952381
   }
  ]
 }
