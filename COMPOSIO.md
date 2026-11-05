@@ -72,6 +72,7 @@ Cada `dados/AAAA-MM.json` traz: totais GSC e GA4 orgânico, cliques e receita po
 
 - `2026-08.json`: completo.
 - `2026-09.json`: completo (finalizado em 05/10/2026 pela rotina do dia 05).
+- `2026-10.json`: completo (coletado em 05/11/2026 pela rotina do dia 05).
 
 ## Rotina mensal
 
@@ -79,4 +80,6 @@ Todo dia **05, às 9h48 (Brasília)** roda uma rotina que coleta o mês fechado,
 
 ## 6. Relatório (`index.html`)
 
-Uma aba por mês, a mais recente primeiro e ativa; ids com sufixo do mês (`tab-set`, `chartClicksDaily-set`...). Para criar a aba de um mês novo: copiar a estrutura da aba anterior, adicionar o botão em `tabs-nav`, o ponto novo nos gráficos YTD e um IIFE novo de gráficos (variáveis locais ao IIFE). Texto de insight factual, a partir dos números, sem adjetivos de intensidade. Entrega por branch + PR em draft; o preview da Vercel valida.
+**Gerar a aba de um mês:** `python3 scripts/gerar_aba_mes.py AAAA-MM` (exige `dados/AAAA-MM.json` completo e o do mês anterior). Ele adiciona o botão, o bloco `<div id="tab-xxx">` e o IIFE de gráficos, e deixa a aba nova como ativa. Valida-se abrindo `index.html` no navegador (o Chart.js do CDN pode não carregar em sandbox; injete uma cópia local). O texto de insight é gerado de forma factual, a partir dos números, sem adjetivos de intensidade.
+
+Estrutura: uma aba por mês, a mais recente primeiro e ativa; ids com sufixo do mês (`tab-out`, `chartClicksDaily-out`...). Entrega por branch + PR em draft; o preview da Vercel valida.
